@@ -20,7 +20,7 @@ set autowrite
 set hidden 
 
 " pathogen
-let g:pathogen_disabled = ['tComment','taglist.vim']
+let g:pathogen_disabled = ['tComment','taglist.vim','checksyntax_vim']
 call pathogen#infect()
 call pathogen#helptags()
 
@@ -65,7 +65,12 @@ let g:ctrlp_root_markers = ['.root-dir']
 let g:ctrlp_working_path_mode = 2
 map <C-B> :CtrlPBuffer<CR>
 
-:colorscheme jellybeans
+" Syntastic
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes' : ['php'] }
+let g:syntastic_auto_jump = 1
+let g:syntastic_auto_loc_list = 1
+
+:colorscheme desert256
 " Start NERDTree on launch and focus file
 "autocmd VimEnter * NERDTree
 "autocmd BufEnter * NERDTreeMirror
