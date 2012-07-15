@@ -1,5 +1,5 @@
 " pathogen
-"let g:pathogen_disabled = ['UltiSnips']
+let g:pathogen_disabled = []
 call pathogen#infect()
 call pathogen#helptags()
 
@@ -75,11 +75,6 @@ let g:syntastic_auto_loc_list = 1
 " SuperTab
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabClosePreviewOnPopupClose = 1
-
-" Ultisnips
-"let g:UltiSnipsExpandTrigger="<tab>"
-"let g:UltiSnipsJumpForwardTrigger="<tab>"
-"let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " Lusty Buffer
 nmap <Leader>b :LustyJuggler<CR>
