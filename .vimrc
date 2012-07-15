@@ -22,7 +22,7 @@ set autowrite
 set hidden 
 
 " pathogen
-let g:pathogen_disabled = ['tComment','taglist.vim','checksyntax_vim']
+"let g:pathogen_disabled = ['tComment','taglist.vim','checksyntax_vim']
 call pathogen#infect()
 call pathogen#helptags()
 
