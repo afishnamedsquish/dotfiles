@@ -2,6 +2,7 @@ set mouse=a
 syntax enable
 set nobackup
 set pastetoggle=<F3>
+set t_Co=256
 
 " search
 set ignorecase
