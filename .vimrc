@@ -3,6 +3,7 @@ syntax enable
 set nobackup
 set pastetoggle=<F3>
 set t_Co=256
+set number
 
 " search
 set ignorecase
