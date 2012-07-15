@@ -72,7 +72,7 @@ let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes' : ['php'] }
 let g:syntastic_auto_jump = 1
 let g:syntastic_auto_loc_list = 1
 
-:colorscheme desert256
+:colorscheme molokai
 " Start NERDTree on launch and focus file
 "autocmd VimEnter * NERDTree
 "autocmd BufEnter * NERDTreeMirror
