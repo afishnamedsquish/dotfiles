@@ -1,3 +1,8 @@
+" pathogen
+"let g:pathogen_disabled = ['UltiSnips']
+call pathogen#infect()
+call pathogen#helptags()
+
 set mouse=a
 syntax enable
 set nobackup
@@ -20,11 +25,6 @@ filetype plugin indent on
 " buffers
 set autowrite
 set hidden 
-
-" pathogen
-"let g:pathogen_disabled = ['tComment','taglist.vim','checksyntax_vim']
-call pathogen#infect()
-call pathogen#helptags()
 
 " bindings
 nnoremap ; :
@@ -72,6 +72,19 @@ let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes' : ['php'] }
 let g:syntastic_auto_jump = 1
 let g:syntastic_auto_loc_list = 1
 
+" SuperTab
+let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabClosePreviewOnPopupClose = 1
+
+" Ultisnips
+"let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsJumpForwardTrigger="<tab>"
+"let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" Lusty Buffer
+nmap <Leader>b :LustyJuggler<CR>
+
+" Color Scheme
 set background=dark
 let g:solarized_termtrans=1
 let g:solarized_termcolors=256
