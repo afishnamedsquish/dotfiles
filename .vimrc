@@ -1,5 +1,5 @@
 " pathogen
-let g:pathogen_disabled = []
+let g:pathogen_disabled = ['lusty', 'csapprox']
 call pathogen#infect()
 call pathogen#helptags()
 
@@ -31,6 +31,8 @@ nnoremap ; :
 map <Leader>' :b#<CR>
 map <C-C> "+y<CR>
 nmap <silent> ,/ :nohlsearch<CR>
+map <Leader>ff <ESC>:let @+ = expand('%:t')<CR>:echo expand('%:t')<CR>
+map <Leader>fp <ESC>:let @+ = expand('%:p')<CR>:echo expand('%:p')<CR>
 
 " make up/down go to next row in editor instead of next line
 nnoremap j gj
@@ -77,7 +79,7 @@ let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabClosePreviewOnPopupClose = 1
 
 " Lusty Buffer
-nmap <Leader>b :LustyJuggler<CR>
+"nmap <Leader>b :LustyJuggler<CR>
 
 " Color Scheme
 set background=dark
