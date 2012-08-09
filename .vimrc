@@ -6,6 +6,7 @@ call pathogen#helptags()
 set mouse=a
 syntax enable
 set nobackup
+set noswapfile
 set pastetoggle=<F3>
 set t_Co=256
 set number
