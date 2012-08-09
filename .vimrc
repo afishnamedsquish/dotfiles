@@ -34,6 +34,12 @@ nmap <silent> ,/ :nohlsearch<CR>
 map <Leader>ff <ESC>:let @+ = expand('%:t')<CR>:echo expand('%:t')<CR>
 map <Leader>fp <ESC>:let @+ = expand('%:p')<CR>:echo expand('%:p')<CR>
 
+" quickfix
+map <Leader>qq <ESC>:cw<CR>
+map <Leader>qc <ESC>:ccl<CR>
+map <Leader>qn <ESC>:cn<CR>
+map <Leader>qp <ESC>:cp<CR>
+
 " make up/down go to next row in editor instead of next line
 nnoremap j gj
 nnoremap k gk
