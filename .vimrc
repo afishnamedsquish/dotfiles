@@ -1,11 +1,12 @@
 " pathogen
-let g:pathogen_disabled = ['lusty_old']
+let g:pathogen_disabled = ['lusty', 'csapprox']
 call pathogen#infect()
 call pathogen#helptags()
 
 set mouse=a
 syntax enable
 set nobackup
+set noswapfile
 set pastetoggle=<F3>
 set t_Co=256
 set number
@@ -33,6 +34,14 @@ map <Leader>' :b#<CR>
 map <C-C> "+y<CR>
 nmap <silent> ,/ :nohlsearch<CR>
 map <Leader>M :%s///g<CR>
+map <Leader>ff <ESC>:let @+ = expand('%:t')<CR>:echo expand('%:t')<CR>
+map <Leader>fp <ESC>:let @+ = expand('%:p')<CR>:echo expand('%:p')<CR>
+
+" quickfix
+map <Leader>qq <ESC>:cw<CR>
+map <Leader>qc <ESC>:ccl<CR>
+map <Leader>qn <ESC>:cn<CR>
+map <Leader>qp <ESC>:cp<CR>
 
 " make up/down go to next row in editor instead of next line
 nnoremap j gj
@@ -83,7 +92,7 @@ let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabClosePreviewOnPopupClose = 1
 
 " Lusty Buffer
-nmap <Leader>b :LustyJuggler<CR>
+"nmap <Leader>b :LustyJuggler<CR>
 
 " Toggle QuickFix list
 function! GetBufferList()
