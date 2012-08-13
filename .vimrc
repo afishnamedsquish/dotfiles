@@ -1,14 +1,16 @@
 " pathogen
-let g:pathogen_disabled = []
+let g:pathogen_disabled = ['lusty', 'csapprox']
 call pathogen#infect()
 call pathogen#helptags()
 
 set mouse=a
 syntax enable
 set nobackup
+set noswapfile
 set pastetoggle=<F3>
 set t_Co=256
 set number
+set nofoldenable
 
 " search
 set ignorecase
@@ -38,6 +40,12 @@ map <Leader>fp :let @+=expand('%:p')<CR>:echo expand('%:p')<CR>
 
 " comments
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" quickfix
+map <Leader>qq <ESC>:cw<CR>
+map <Leader>qc <ESC>:ccl<CR>
+map <Leader>qn <ESC>:cn<CR>
+map <Leader>qp <ESC>:cp<CR>
 
 " make up/down go to next row in editor instead of next line
 nnoremap j gj
@@ -80,12 +88,55 @@ let g:syntastic_auto_jump = 1
 let g:syntastic_auto_loc_list = 1
 let s:php_executable = 'php'
 
+" Easy Motion
+hi link EasyMotionTarget ErrorMsg
+hi link EasyMotionShade Comment
+
 " SuperTab
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabClosePreviewOnPopupClose = 1
 
 " Lusty Buffer
-nmap <Leader>b :LustyJuggler<CR>
+"nmap <Leader>b :LustyJuggler<CR>
+
+" Toggle QuickFix list
+function! GetBufferList()
+  redir =>buflist
+  silent! ls
+  redir END
+  return buflist
+endfunction
+
+function! ToggleList(bufname, pfx)
+  let buflist = GetBufferList()
+  for bufnum in map(filter(split(buflist, '\n'), 'v:val =~ "'.a:bufname.'"'), 'str2nr(matchstr(v:val, "\\d\\+"))')
+    if bufwinnr(bufnum) != -1
+      exec(a:pfx.'close')
+      return
+    endif
+  endfor
+  if a:pfx == 'l' && len(getloclist(0)) == 0
+      echohl ErrorMsg
+      echo "Location List is Empty."
+      return
+  endif
+  let winnr = winnr()
+  exec(a:pfx.'open')
+  if winnr() != winnr
+    wincmd p
+  endif
+endfunction
+command -bang -nargs=? QFix call QFixToggle(<bang>0)
+function! QFixToggle(forced)
+  if exists("g:qfix_win") && a:forced == 0
+    cclose
+    unlet g:qfix_win
+  else
+    copen 10
+    let g:qfix_win = bufnr("$")
+  endif
+endfunction
+nmap <silent> <Leader>` :QFix<CR>
 
 " Color Scheme
 set background=dark
