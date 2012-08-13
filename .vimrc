@@ -31,6 +31,13 @@ nnoremap ; :
 map <Leader>' :b#<CR>
 map <C-C> "+y<CR>
 nmap <silent> ,/ :nohlsearch<CR>
+map <Leader>M :%s/<C-V><C-M>//g<CR>
+map <Leader>ff :let @+=expand('%:t')<CR>:echo expand('%:t')<CR>
+map <Leader>fr :let @+=expand('%')<CR>:echo expand('%')<CR>
+map <Leader>fp :let @+=expand('%:p')<CR>:echo expand('%:p')<CR>
+
+" comments
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " make up/down go to next row in editor instead of next line
 nnoremap j gj
@@ -71,6 +78,7 @@ map <C-B> :CtrlPBuffer<CR>
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes' : ['php'] }
 let g:syntastic_auto_jump = 1
 let g:syntastic_auto_loc_list = 1
+let s:php_executable = 'php'
 
 " SuperTab
 let g:SuperTabDefaultCompletionType = "context"
