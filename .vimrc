@@ -11,6 +11,9 @@ set pastetoggle=<F3>
 set t_Co=256
 set number
 set nofoldenable
+set laststatus=2
+set incsearch
+set autoread
 
 " search
 set ignorecase
@@ -37,6 +40,13 @@ map <Leader>M :%s/<C-V><C-M>//g<CR>
 map <Leader>ff :let @+=expand('%:t')<CR>:echo expand('%:t')<CR>
 map <Leader>fr :let @+=expand('%')<CR>:echo expand('%')<CR>
 map <Leader>fp :let @+=expand('%:p')<CR>:echo expand('%:p')<CR>
+
+" Edit the vimrc file
+nmap <silent> <Leader>ev :e $MYVIMRC<CR>
+nmap <silent> <Leader>sv :so $MYVIMRC<CR>
+
+" Try jj for esc
+imap jj <esc>
 
 " comments
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
