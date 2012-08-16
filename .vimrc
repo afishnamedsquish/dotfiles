@@ -44,8 +44,7 @@ map <Leader>M :%s/<C-V><C-M>//g<CR>
 map <Leader>ff :let @+=expand('%:t')<CR>:echo expand('%:t')<CR>
 map <Leader>fr :let @+=expand('%')<CR>:echo expand('%')<CR>
 map <Leader>fp :let @+=expand('%:p')<CR>:echo expand('%:p')<CR>
-map <Leader>nr :NR<CR>
-imap <Leader>nr <ESC>:NR<CR>
+map <Leader>s <ESC>:Scratch<CR>
 
 " Edit the vimrc file
 nmap <silent> <Leader>ev :e $MYVIMRC<CR>
