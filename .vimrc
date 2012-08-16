@@ -1,4 +1,3 @@
-" pathogen
 let g:pathogen_disabled = ['lusty', 'csapprox']
 call pathogen#infect()
 call pathogen#helptags()
@@ -12,8 +11,10 @@ set t_Co=256
 set number
 set nofoldenable
 set laststatus=2
-set incsearch
 set autoread
+
+" System default for mappings is now the "," character
+let mapleader = ","
 
 " search
 set ignorecase
@@ -30,9 +31,12 @@ filetype plugin indent on
 " buffers
 set autowrite
 set hidden 
+" Wipe out all buffers
+nmap <silent> <Leader>wa :1,9000bwipeout<cr>
 
 " bindings
 nnoremap ; :
+vnoremap ; :
 map <Leader>' :b#<CR>
 map <C-C> "+y<CR>
 nmap <silent> ,/ :nohlsearch<CR>
@@ -40,6 +44,8 @@ map <Leader>M :%s/<C-V><C-M>//g<CR>
 map <Leader>ff :let @+=expand('%:t')<CR>:echo expand('%:t')<CR>
 map <Leader>fr :let @+=expand('%')<CR>:echo expand('%')<CR>
 map <Leader>fp :let @+=expand('%:p')<CR>:echo expand('%:p')<CR>
+map <Leader>nr :NR<CR>
+imap <Leader>nr <ESC>:NR<CR>
 
 " Edit the vimrc file
 nmap <silent> <Leader>ev :e $MYVIMRC<CR>
@@ -52,10 +58,10 @@ imap jj <esc>
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " quickfix
-map <Leader>qq <ESC>:cw<CR>
-map <Leader>qc <ESC>:ccl<CR>
-map <Leader>qn <ESC>:cn<CR>
-map <Leader>qp <ESC>:cp<CR>
+map <Leader>co <ESC>:cw<CR>
+map <Leader>cl <ESC>:ccl<CR>
+map <Leader>cn <ESC>:cn<CR>
+map <Leader>cp <ESC>:cp<CR>
 
 " make up/down go to next row in editor instead of next line
 nnoremap j gj
@@ -71,6 +77,7 @@ map <F2> :NERDTreeToggle<CR>
 let g:NERDTreeWinSize = 25
 
 " Nerd Commenter
+let NERDCreateDefaultMappings = 0
 nmap <Leader>c <Plug>NERDCommenterToggle
 vmap <Leader>c <Plug>NERDCommenterToggle 
 
@@ -91,7 +98,6 @@ vmap <Leader>d :call PhpDocRange()<CR>
 let g:ctrlp_root_markers = ['.root-dir']
 let g:ctrlp_working_path_mode = 2
 map <C-B> :CtrlPBuffer<CR>
-map <C-M> :CtrlPMR<CR>
 
 " Syntastic
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes' : ['php'] }
@@ -106,48 +112,6 @@ hi link EasyMotionShade Comment
 " SuperTab
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabClosePreviewOnPopupClose = 1
-
-" Lusty Buffer
-"nmap <Leader>b :LustyJuggler<CR>
-
-" Toggle QuickFix list
-function! GetBufferList()
-  redir =>buflist
-  silent! ls
-  redir END
-  return buflist
-endfunction
-
-function! ToggleList(bufname, pfx)
-  let buflist = GetBufferList()
-  for bufnum in map(filter(split(buflist, '\n'), 'v:val =~ "'.a:bufname.'"'), 'str2nr(matchstr(v:val, "\\d\\+"))')
-    if bufwinnr(bufnum) != -1
-      exec(a:pfx.'close')
-      return
-    endif
-  endfor
-  if a:pfx == 'l' && len(getloclist(0)) == 0
-      echohl ErrorMsg
-      echo "Location List is Empty."
-      return
-  endif
-  let winnr = winnr()
-  exec(a:pfx.'open')
-  if winnr() != winnr
-    wincmd p
-  endif
-endfunction
-command -bang -nargs=? QFix call QFixToggle(<bang>0)
-function! QFixToggle(forced)
-  if exists("g:qfix_win") && a:forced == 0
-    cclose
-    unlet g:qfix_win
-  else
-    copen 10
-    let g:qfix_win = bufnr("$")
-  endif
-endfunction
-nmap <silent> <Leader>` :QFix<CR>
 
 " Color Scheme
 set background=dark
