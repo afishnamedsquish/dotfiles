@@ -13,6 +13,9 @@ set nofoldenable
 set laststatus=2
 set autoread
 set scrolloff=3
+set cul
+set wildmenu
+set wildmode=list:longest
 
 " System default for mappings is now the "," character
 let mapleader = ","
@@ -22,6 +25,7 @@ set ignorecase
 set smartcase
 set hlsearch
 set tags=tags;/
+set incsearch
 
 " default search and substitute to use very magic mode
 nnoremap / /\v
@@ -42,6 +46,8 @@ set autowrite
 set hidden 
 " Wipe out all buffers
 nmap <silent> <Leader>wa :1,9000bwipeout<cr>
+map <C-j> :bprev<CR>
+map <C-k> :bnext<CR>
 
 " bindings
 nnoremap ; :
@@ -58,6 +64,16 @@ map <Leader>sc <ESC>:Scratch<CR>
 " Edit the vimrc file
 nmap <silent> <Leader>ev :e $MYVIMRC<CR>
 nmap <silent> <Leader>sv :so $MYVIMRC<CR>
+
+" toggle between number and relative number on ,l
+nnoremap <Leader>l :call ToggleRelativeAbsoluteNumber()<CR>
+function! ToggleRelativeAbsoluteNumber()
+  if &number
+    set relativenumber
+  else
+    set number
+  endif
+endfunction
 
 " Try jj for esc
 imap jj <esc>
@@ -81,7 +97,7 @@ vmap <C-Down> xp`[V`]
 map <Leader>wr <ESC>:set wrap!<CR>
 
 " list whitespace
-map <Leader>l :set list!<CR>
+map <Leader>ww :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
 
 " make up/down go to next row in editor instead of next line
@@ -89,6 +105,9 @@ nnoremap j gj
 nnoremap k gk
 nnoremap <Down> gj
 nnoremap <Up> gk
+
+" sudo write this
+cmap W! w !sudo tee % >/dev/null
 
 "Markdown to HTML  
 nmap <Leader>md :%!/usr/local/bin/Markdown.pl --html4tags <CR>
@@ -164,3 +183,6 @@ colorscheme solarized
 " Examples
 " language specific setting
 " autocmd filetype python set expandtab
+
+" PHP
+"autocmd FileType php setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
