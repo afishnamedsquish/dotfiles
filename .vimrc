@@ -12,6 +12,7 @@ set number
 set nofoldenable
 set laststatus=2
 set autoread
+set scrolloff=3
 
 " System default for mappings is now the "," character
 let mapleader = ","
@@ -21,6 +22,15 @@ set ignorecase
 set smartcase
 set hlsearch
 set tags=tags;/
+map <Leader>,hl <ESC>:set hlsearch!<CR>
+
+" default search and substitute to use very magic mode
+nnoremap / /\v
+vnoremap / /\v
+nnoremap <Leader>ss :s/\v
+vnoremap <Leader>ss :s/\v
+nnoremap <Leader>s% :%s/\v
+vnoremap <Leader>s% :%s/\v
 
 " indenting
 set smartindent
@@ -44,7 +54,7 @@ map <Leader>M :%s/<C-V><C-M>//g<CR>
 map <Leader>ff :let @+=expand('%:t')<CR>:echo expand('%:t')<CR>
 map <Leader>fr :let @+=expand('%')<CR>:echo expand('%')<CR>
 map <Leader>fp :let @+=expand('%:p')<CR>:echo expand('%:p')<CR>
-map <Leader>s <ESC>:Scratch<CR>
+map <Leader>sc <ESC>:Scratch<CR>
 
 " Edit the vimrc file
 nmap <silent> <Leader>ev :e $MYVIMRC<CR>
