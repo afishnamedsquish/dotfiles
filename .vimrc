@@ -22,7 +22,6 @@ set ignorecase
 set smartcase
 set hlsearch
 set tags=tags;/
-map <Leader>,hl <ESC>:set hlsearch!<CR>
 
 " default search and substitute to use very magic mode
 nnoremap / /\v
@@ -49,7 +48,7 @@ nnoremap ; :
 vnoremap ; :
 map <Leader>' :b#<CR>
 map <C-C> "+y<CR>
-nmap <silent> ,/ :nohlsearch<CR>
+nmap <silent> ,/ :set hlsearch!<CR>
 map <Leader>M :%s/<C-V><C-M>//g<CR>
 map <Leader>ff :let @+=expand('%:t')<CR>:echo expand('%:t')<CR>
 map <Leader>fr :let @+=expand('%')<CR>:echo expand('%')<CR>
