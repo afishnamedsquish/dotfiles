@@ -25,15 +25,6 @@ set ignorecase
 set smartcase
 set hlsearch
 set tags=tags;/
-set incsearch
-
-" default search and substitute to use very magic mode
-nnoremap / /\v
-vnoremap / /\v
-nnoremap <Leader>ss :s/\v
-vnoremap <Leader>ss :s/\v
-nnoremap <Leader>s% :%s/\v
-vnoremap <Leader>s% :%s/\v
 
 " indenting
 set smartindent
@@ -61,9 +52,11 @@ map <Leader>fr :let @+=expand('%')<CR>:echo expand('%')<CR>
 map <Leader>fp :let @+=expand('%:p')<CR>:echo expand('%:p')<CR>
 map <Leader>sc <ESC>:Scratch<CR>
 
-" Edit the vimrc file
+" Edit common files
 nmap <silent> <Leader>ev :e $MYVIMRC<CR>
 nmap <silent> <Leader>sv :so $MYVIMRC<CR>
+nmap <silent> <Leader>ssh :e ~/.ssh/config<CR>
+nmap <silent> <Leader>bash :e ~/.bash_profile<CR>
 
 " toggle between number and relative number on ,l
 nnoremap <Leader>l :call ToggleRelativeAbsoluteNumber()<CR>
