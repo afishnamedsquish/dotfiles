@@ -25,7 +25,6 @@ set ignorecase
 set smartcase
 set hlsearch
 set tags=tags;/
-set incsearch
 
 " indenting
 set smartindent
@@ -53,9 +52,11 @@ map <Leader>fr :let @+=expand('%')<CR>:echo expand('%')<CR>
 map <Leader>fp :let @+=expand('%:p')<CR>:echo expand('%:p')<CR>
 map <Leader>sc <ESC>:Scratch<CR>
 
-" Edit the vimrc file
+" Edit common files
 nmap <silent> <Leader>ev :e $MYVIMRC<CR>
 nmap <silent> <Leader>sv :so $MYVIMRC<CR>
+nmap <silent> <Leader>ssh :e ~/.ssh/config<CR>
+nmap <silent> <Leader>bash :e ~/.bash_profile<CR>
 
 " toggle between number and relative number on ,l
 nnoremap <Leader>l :call ToggleRelativeAbsoluteNumber()<CR>
