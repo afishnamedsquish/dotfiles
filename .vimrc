@@ -27,14 +27,6 @@ set hlsearch
 set tags=tags;/
 set incsearch
 
-" default search and substitute to use very magic mode
-nnoremap / /\v
-vnoremap / /\v
-nnoremap <Leader>ss :s/\v
-vnoremap <Leader>ss :s/\v
-nnoremap <Leader>s% :%s/\v
-vnoremap <Leader>s% :%s/\v
-
 " indenting
 set smartindent
 set tabstop=4
