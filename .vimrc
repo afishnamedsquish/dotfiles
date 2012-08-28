@@ -37,6 +37,7 @@ set autowrite
 set hidden 
 " Wipe out all buffers
 nmap <silent> <Leader>wa :1,9000bwipeout<cr>
+nmap <Leader>da ggdG
 map <C-j> :bprev<CR>
 map <C-k> :bnext<CR>
 
@@ -44,7 +45,8 @@ map <C-k> :bnext<CR>
 nnoremap ; :
 vnoremap ; :
 map <Leader>' :b#<CR>
-map <C-C> "+y<CR>
+map <C-C> "+y
+map <C-A> <ESC>ggVG
 nmap <silent> ,/ :set hlsearch!<CR>
 map <Leader>M :%s/<C-V><C-M>//g<CR>
 map <Leader>ff :let @+=expand('%:t')<CR>:echo expand('%:t')<CR>
