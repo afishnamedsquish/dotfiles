@@ -1,0 +1,4 @@
+set guifont="Inconsolata 18"
+vmap <C-C> "+y
+map <C-V> "+gp
+imap <C-V> <ESC>"+gpi
