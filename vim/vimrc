@@ -1,4 +1,4 @@
-let g:pathogen_disabled = ['lusty', 'csapprox']
+let g:pathogen_disabled = []
 call pathogen#infect()
 call pathogen#helptags()
 
@@ -58,7 +58,8 @@ map <Leader>sc <ESC>:Scratch<CR>
 nmap <silent> <Leader>ev :e $MYVIMRC<CR>
 nmap <silent> <Leader>sv :so $MYVIMRC<CR>
 nmap <silent> <Leader>ssh :e ~/.ssh/config<CR>
-nmap <silent> <Leader>bash :e ~/.bash_profile<CR>
+nmap <silent> <Leader>bashp :e ~/.bash_profile<CR>
+nmap <silent> <Leader>bashr :e ~/.bashrc<CR>
 
 " toggle between number and relative number on ,l
 nnoremap <Leader>l :call ToggleRelativeAbsoluteNumber()<CR>
