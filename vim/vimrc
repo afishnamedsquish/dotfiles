@@ -122,14 +122,14 @@ map <Leader>wt <C-W>T
 map <Leader>tc :tabc<CR>
 map <Leader>te :tabe 
 map <Leader>to :tabo<CR>
-map <M-]> gt
-map <M-[> gT
-map <M-1> 1gt
-map <M-2> 2gt
-map <M-3> 3gt
-map <M-4> 4gt
-map <M-5> 5gt
-map <M-0> :tablast<CR>
+map <A-]> gt
+map <A-[> gT
+map <A-1> 1gt
+map <A-2> 2gt
+map <A-3> 3gt
+map <A-4> 4gt
+map <A-5> 5gt
+map <A-0> :tablast<CR>
 
 " Vim-Task
 inoremap <silent> <Leader>tt <ESC>:call Toggle_task_status()<CR>i
