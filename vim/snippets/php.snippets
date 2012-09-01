@@ -1,0 +1,10 @@
+snippet eci
+	<?= ${1:variable}${2}; ?>
+snippet foreachil
+	<? foreach ($${1:variable} as $${2:value}): ?>
+		${3:<!-- html... -->}
+	<? endforeach; ?>
+snippet foreachkil
+	<? foreach ($${1:variable} as $${2:key} => $${3:value}): ?>
+		${4:<!-- html... -->}
+	<? endforeach; ?>
