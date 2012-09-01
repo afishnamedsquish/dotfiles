@@ -5,3 +5,4 @@ Necessary symlinks:
 ~/.vimrc ~/dotfiles/vim/vimrc
 ~/.gvimrc ~/dotfiles/vim/gvimrc
 ~/.bashrc ~/dotfiles/bashrc
+~/.tmux.conf ~/dotfiles/tmux.conf
