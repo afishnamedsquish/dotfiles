@@ -131,6 +131,10 @@ map <M-4> 4gt
 map <M-5> 5gt
 map <M-0> :tablast<CR>
 
+" Vim-Task
+inoremap <silent> <Leader>tt <ESC>:call Toggle_task_status()<CR>i
+noremap <silent> <Leader>tt :call Toggle_task_status()<CR>
+
 " php folding with PHPDoc support
 let g:DisableAutoPHPFolding = 1
 map <F6> <Esc>:EnableFastPHPFolds<CR>
