@@ -64,3 +64,6 @@
 [submodule "vim/bundle/vim-task"]
 	path = vim/bundle/vim-task
 	url = git://github.com/samsonw/vim-task.git
+[submodule "vim/bundle/codepath.vim"]
+	path = vim/bundle/codepath.vim
+	url = git://github.com/lucapette/codepath.vim.git
