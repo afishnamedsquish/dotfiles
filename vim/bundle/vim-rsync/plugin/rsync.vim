@@ -10,7 +10,7 @@
 " Maintainer:   Ben Glassman
 " Version:      1.0
 
-let g:rsync_cmd = 'rsync -rltD --progress'
+let g:rsync_cmd = 'rsync -lt --progress'
 let g:ssh_config = '~/.ssh/config'
 
 " Rsync
