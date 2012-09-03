@@ -210,6 +210,8 @@ nnoremap <silent> <Leader>H :call HtmlUnEscape()<CR>
 vnoremap <silent> <Leader>h :call HtmlEscape()<CR>
 vnoremap <silent> <Leader>H :call HtmlUnEscape()<CR>
 
+let g:codepath = $HOME.'/sites'
+
 " Start NERDTree on launch and focus file
 "autocmd VimEnter * NERDTree
 "autocmd BufEnter * NERDTreeMirror
