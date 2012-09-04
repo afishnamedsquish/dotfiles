@@ -175,7 +175,7 @@ let g:solarized_contrast="high"
 let g:solarized_visibility="high"
 colorscheme solarized
 
-function HtmlEscape()
+function! HtmlEscape()
 	silent s/&/\&amp;/eg
 	silent s/</\&lt;/eg
 	silent s/>/\&gt;/eg
@@ -190,7 +190,7 @@ function HtmlEscape()
 	silent s/—/\&mdash;/eg
 endfunction
 
-function HtmlUnEscape()
+function! HtmlUnEscape()
 	silent s/&amp;/\&/eg
 	silent s/&lt;/</eg
 	silent s/&gt;/>/eg
