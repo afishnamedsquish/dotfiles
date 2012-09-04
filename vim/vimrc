@@ -84,9 +84,11 @@ map <Leader>qc <ESC>:ccl<CR>
 map <Leader>q] <ESC>:cn<CR>
 map <Leader>q[ <ESC>:cp<CR>
 
-" buffer
-map <Leader>w] <ESC>:wn<CR>
+" buffer nav
+map <Leader>b[ <ESC>:bn<CR>
+map <Leader>b] <ESC>:bn<CR>
 map <Leader>w[ <ESC>:wp<CR>
+map <Leader>w] <ESC>:wp<CR>
 
 " move lines
 nmap <C-Up> ddkP
@@ -216,7 +218,7 @@ nnoremap <silent> <Leader>H :call HtmlUnEscape()<CR>
 vnoremap <silent> <Leader>h :call HtmlEscape()<CR>
 vnoremap <silent> <Leader>H :call HtmlUnEscape()<CR>
 
-let g:codepath = $HOME.'/sites'
+let g:codepath = $HOME.'/client_sites'
 
 " Start NERDTree on launch and focus file
 "autocmd VimEnter * NERDTree
