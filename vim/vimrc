@@ -175,6 +175,7 @@ let g:solarized_contrast="high"
 let g:solarized_visibility="high"
 colorscheme solarized
 
+" TODO Move to a separate plugin, or maybe afterfiles?
 function! HtmlEscape()
 	silent s/&/\&amp;/eg
 	silent s/</\&lt;/eg
