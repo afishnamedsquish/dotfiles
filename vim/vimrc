@@ -16,6 +16,7 @@ set scrolloff=3
 set cul
 set wildmenu
 set wildmode=list:longest
+set vb
 
 " System default for mappings is now the "," character
 let mapleader = ","
@@ -82,6 +83,10 @@ map <Leader>qq <ESC>:cw<CR>
 map <Leader>qc <ESC>:ccl<CR>
 map <Leader>q] <ESC>:cn<CR>
 map <Leader>q[ <ESC>:cp<CR>
+
+" buffer
+map <Leader>w] <ESC>:wn<CR>
+map <Leader>w[ <ESC>:wp<CR>
 
 " move lines
 nmap <C-Up> ddkP
