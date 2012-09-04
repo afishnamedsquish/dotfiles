@@ -34,7 +34,7 @@ function! rsync#send(alias)
 
 	" If there is an ssh alias defined, send the file
 	if rsync#aliasExists(alias)
-		let e = '!' . g:rsync_cmd . ' ' . path . ' ' . alias . ':' . remotepath
+		let e = '!' . g:rsync_cmd . ' "' . path . '" ' . alias . ':' . remotepath
 		execute(e)
 	else
 		echo 'ERROR: SSH alias not found: ' . alias
