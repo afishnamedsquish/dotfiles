@@ -1,7 +1,7 @@
 if has('gui_macvim')
-	set guifont=Inconsolata:h18
+	set guifont=Inconsolata:h16
 else
-	set guifont="Inconsolata 18"
+	set guifont=Inconsolata\ 16
 endif
 
 vmap <C-C> "+y
