@@ -67,3 +67,6 @@
 [submodule "vim/bundle/codepath.vim"]
 	path = vim/bundle/codepath.vim
 	url = git://github.com/lucapette/codepath.vim.git
+[submodule "vim/bundle/vim-unimpaired"]
+	path = vim/bundle/vim-unimpaired
+	url = https://github.com/tpope/vim-unimpaired.git
