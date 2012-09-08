@@ -182,7 +182,7 @@ let g:solarized_contrast="high"
 let g:solarized_visibility="high"
 colorscheme solarized
 
-let g:codepath = $HOME.'/client_sites'
+let g:codepath = [$HOME.'/client_sites', $HOME.'/sites']
 " Start NERDTree on launch and focus file
 "autocmd VimEnter * NERDTree
 "autocmd BufEnter * NERDTreeMirror

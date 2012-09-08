@@ -14,14 +14,14 @@ let g:ssh_config = '~/.ssh/config'
 
 " Rsync
 function! rsync#send(alias)
-	let codepath = codepath#path()
-	let path = expand('%:p')
+	let codepath = codepath#path(0)
 
-	" If the codepath is not in the file path, exit
-	if match(path, codepath) == -1
-		echo 'ERROR: File not in the codepath: ' . codepath
+	if empty(codepath)
+		echo 'ERROR: Current directory is not in the codepath'
 		return
 	endif
+
+	let path = expand('%:p')
 
 	let remotepath = substitute(path, codepath . '/', '', '')
 
