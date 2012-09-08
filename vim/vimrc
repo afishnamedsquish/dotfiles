@@ -182,44 +182,7 @@ let g:solarized_contrast="high"
 let g:solarized_visibility="high"
 colorscheme solarized
 
-" TODO Move to a separate plugin, or maybe afterfiles?
-function! HtmlEscape()
-	silent s/&/\&amp;/eg
-	silent s/</\&lt;/eg
-	silent s/>/\&gt;/eg
-	silent s/“/\&ldquo;/eg
-	silent s/”/\&rdquo;/eg
-	silent s/™/\&trade;/eg
-	silent s/®/\&reg;/eg
-	silent s/©/\&copy;/eg
-	silent s/‘/\&lsquo;/eg
-	silent s/’/\&rsquo;/eg
-	silent s/–/\&ndash;/eg
-	silent s/—/\&mdash;/eg
-endfunction
-
-function! HtmlUnEscape()
-	silent s/&amp;/\&/eg
-	silent s/&lt;/</eg
-	silent s/&gt;/>/eg
-	silent s/&ldquo;/“/eg
-	silent s/&rdquo;/”/eg
-	silent s/&trade;/™/eg
-	silent s/&reg;/®/eg
-	silent s/&copy;/©/eg
-	silent s/&lsquo;/‘/eg
-	silent s/&rsquo;/’/eg
-	silent s/&ndash;/–/eg
-	silent s/&mdash;/—/eg
-endfunction
-
-nnoremap <silent> <Leader>h :call HtmlEscape()<CR>
-nnoremap <silent> <Leader>H :call HtmlUnEscape()<CR>
-vnoremap <silent> <Leader>h :call HtmlEscape()<CR>
-vnoremap <silent> <Leader>H :call HtmlUnEscape()<CR>
-
 let g:codepath = $HOME.'/client_sites'
-
 " Start NERDTree on launch and focus file
 "autocmd VimEnter * NERDTree
 "autocmd BufEnter * NERDTreeMirror
@@ -231,3 +194,16 @@ let g:codepath = $HOME.'/client_sites'
 
 " PHP
 "autocmd FileType php setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
+
+" XPTemplate
+let g:xptemplate_key = '<C-T>'
+let g:xptemplate_snippet_folders = [$HOME.'/dotfiles/vim/xptemplate_snippets']
+let g:xptemplate_brace_complete = 0
+let g:xptemplate_key_pum_only = '<Leader><Tab>'
+imap <C-d> <Tab>
+let g:xptemplate_nav_cancel = '<C-d>'
+let g:xptemplate_nav_next = '<Tab>'
+let g:xptemplate_to_right = '<C-]>'
+let g:xptemplate_goback = '<C-[>'
+let g:xptemplate_pum_tab_nav = 1
+nmap <C-F7> :XPTreload<CR>
