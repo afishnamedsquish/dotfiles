@@ -70,6 +70,3 @@
 [submodule "vim/bundle/xptemplate"]
 	path = vim/bundle/xptemplate
 	url = git://github.com/drmingdrmer/xptemplate.git
-[submodule "vim/bundle/codepath.vim"]
-	path = vim/bundle/codepath.vim
-	url = https://github.com/afishnamedsquish/codepath.vim.git
