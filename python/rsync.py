@@ -1,19 +1,16 @@
+# TODO Remove shell=True, refactor Popen arg1 into list of args for shell
 import os
-import argparse
 import subprocess
 import projectpath
-
-# Parse arguments
-parser = argparse.ArgumentParser()
-parser.add_argument('source')
-args = parser.parse_args()
 
 opts = "-rltD --progress --exclude='*.swp' --exclude='*.bak'"
 ssh_config_path = os.path.abspath(os.path.expanduser('~/.ssh/config'))
 
 def send(source, destination, ssh_alias, opts=opts):
 
-	cmd = 'rsync ' + opts + ' "' +  source + '" ' + ssh_alias + ':' + destination
+	source = source.replace(' ', '\ ')
+	destination = destination.replace(' ', '\ ')
+	cmd = 'rsync ' + opts + ' ' +  source + ' ' + ssh_alias + ':' + destination
 	proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
 	return proc.communicate()
 
