@@ -20,7 +20,7 @@ def send_to_project(source):
 	project_path = projectpath.find(source)
 
 	if project_path == False:
-		return False
+		return (False, 'Source ' + source + ' not in project path')
 
 	# if its a directory or if the path doesnt exist, send to parent directory on remote
 	remote_path = source.replace(project_path + os.path.sep, '')
@@ -33,9 +33,9 @@ def send_to_project(source):
 
 	if is_ssh_alias(project_alias):
 		result = send(source, remote_path, project_alias)
-		return result[0]
+		return (True, result[0])
 	else:
-		return False
+		return (False, 'Invalid SSH alias ' + project_alias)
 
 def is_ssh_alias(alias, path=ssh_config_path):
 
