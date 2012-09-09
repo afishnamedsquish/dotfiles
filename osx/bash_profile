@@ -241,7 +241,6 @@ alias ics='cd ~/ics'
 
 alias gvim='mvim'
 alias v='mvim'
-alias mono='smbmount //monolith /Staff -o username=Ben Glassman,password=floor45micro'
 
 alias gs='git status'
 alias ga='git add'
