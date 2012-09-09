@@ -14,7 +14,7 @@ let g:ssh_config = '~/.ssh/config'
 
 " Rsync
 function! rsync#send(alias)
-	let codepath = codepath#path(0)
+	let codepath = vimpy#project_path()
 
 	if empty(codepath)
 		echo 'ERROR: Current directory is not in the codepath'

@@ -103,10 +103,6 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-alias o="xdg-open"
-alias r="rsync -rltD --progress --exclude='*.swp' --exclude='*.bak'"
-ls='ls --color=auto'
-
 export PS1="\n\[\033[1;36m\]\u\[\033[1;37m\] \[\033[0;36m\]`date`\n\[\033[0m\][\[\033[1;33m\]\w\[\033[0m\]] "
 
 # Derek Wyatt's Directory Stack
@@ -321,3 +317,10 @@ function csd
 } 
 
 alias cd=cd_
+alias o="xdg-open"
+alias r="rsync -rltD --progress --exclude='*.swp' --exclude='*.bak'"
+alias ls='ls --color=auto'
+alias tmux="TERM=screen-256color-bce tmux"
+
+# Add to python path
+export PYTHONPATH=$PYTHONPATH:$HOME/dotfiles/python
