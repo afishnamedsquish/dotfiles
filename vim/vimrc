@@ -56,8 +56,8 @@ map <Leader>fp :let @+=expand('%:p')<CR>:echo expand('%:p')<CR>
 map <Leader>sc <ESC>:Scratch<CR>
 
 " Edit common files
-nmap <silent> <Leader>ev :e $MYVIMRC<CR>
-nmap <silent> <Leader>sv :so $MYVIMRC<CR>
+nmap <silent> <Leader>ev :e ~/dotfiles/vim/vimrc<CR>
+nmap <silent> <Leader>sv :so ~/dotfiles/vim/vimrc<CR>
 nmap <silent> <Leader>ssh :e ~/.ssh/config<CR>
 nmap <silent> <Leader>bashp :e ~/.bash_profile<CR>
 nmap <silent> <Leader>bashr :e ~/.bashrc<CR>
@@ -183,6 +183,43 @@ let g:solarized_visibility="high"
 colorscheme solarized
 
 let g:codepath = [$HOME.'/client_sites', $HOME.'/sites']
+
+" TODO Move to a separate plugin, or maybe afterfiles?
+function! HtmlEscape()
+	silent s/&/\&amp;/eg
+	silent s/</\&lt;/eg
+	silent s/>/\&gt;/eg
+	silent s/“/\&ldquo;/eg
+	silent s/”/\&rdquo;/eg
+	silent s/™/\&trade;/eg
+	silent s/®/\&reg;/eg
+	silent s/©/\&copy;/eg
+	silent s/‘/\&lsquo;/eg
+	silent s/’/\&rsquo;/eg
+	silent s/–/\&ndash;/eg
+	silent s/—/\&mdash;/eg
+endfunction
+
+function! HtmlUnEscape()
+	silent s/&amp;/\&/eg
+	silent s/&lt;/</eg
+	silent s/&gt;/>/eg
+	silent s/&ldquo;/“/eg
+	silent s/&rdquo;/”/eg
+	silent s/&trade;/™/eg
+	silent s/&reg;/®/eg
+	silent s/&copy;/©/eg
+	silent s/&lsquo;/‘/eg
+	silent s/&rsquo;/’/eg
+	silent s/&ndash;/–/eg
+	silent s/&mdash;/—/eg
+endfunction
+
+nnoremap <silent> <Leader>h :call HtmlEscape()<CR>
+nnoremap <silent> <Leader>H :call HtmlUnEscape()<CR>
+vnoremap <silent> <Leader>h :call HtmlEscape()<CR>
+vnoremap <silent> <Leader>H :call HtmlUnEscape()<CR>
+
 " Start NERDTree on launch and focus file
 "autocmd VimEnter * NERDTree
 "autocmd BufEnter * NERDTreeMirror
