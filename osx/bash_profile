@@ -254,3 +254,8 @@ alias glf='git log FETCH_HEAD'
 alias gmf='git merge FETCH_HEAD'
 alias gfo='git fetch origin'
 alias gpo='git push origin'
+
+export EDITOR=vim
+
+# Add to python path
+export PYTHONPATH=$PYTHONPATH:$HOME/dotfiles/python
