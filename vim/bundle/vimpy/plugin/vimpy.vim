@@ -53,5 +53,5 @@ map <Leader>rp :echo vimpy#rsync_project('put')<CR>
 map <Leader>rg :echo vimpy#rsync_project('get')<CR>:e!<CR>
 
 " TODO Fix macvim issue with using vimpy#rsync_project to avoid the need to call the python script directly
-map <Leader>rsp :echo system('python ~/dotfiles/python/rsync_send_to_project.py "' . expand('%:p') . '" put')
-map <Leader>rsg :echo system('python ~/dotfiles/python/rsync_send_to_project.py "' . expand('%:p') . '" get')
+map <Leader>rsp :echo system('python ~/dotfiles/python/rsync_send_to_project.py "' . expand('%:p') . '" put')<CR>
+map <Leader>rsg :echo system('python ~/dotfiles/python/rsync_send_to_project.py "' . expand('%:p') . '" get')<CR>:e!<CR>
