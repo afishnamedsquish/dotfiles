@@ -1,4 +1,5 @@
 # TODO Remove shell=True, refactor Popen arg1 into list of args for shell
+# TODO Allow for bash to complete globs before they are passsed in instead of requring '*' so it can be passed along to final rsync shell. Pull directory off of first file in that case if there are spaces? Not sure how to split on arguments.. do spaces (since actual spaces will be \ ) but what about arguments in dbl quotes with spaces?
 import os
 import subprocess
 import projectpath
