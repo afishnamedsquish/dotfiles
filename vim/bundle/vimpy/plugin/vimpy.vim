@@ -27,32 +27,31 @@ endfunction
 
 " Rsync files to project
 
-"function! vimpy#rsync_file_to_project()
+function! vimpy#rsync_project(direction)
 
-"python << endpython
+python << endpython
 
-"import os
-"import vim
-"import sys
+import os
+import vim
+import sys
 
-"sys.path.append(os.path.join(os.path.expanduser('~'), 'dotfiles/python'))
-"import rsync
+sys.path.append(os.path.join(os.path.expanduser('~'), 'dotfiles/python'))
+import rsync
 
-"source = vim.eval("expand('%:p')")
+source = vim.eval("expand('%:p')")
 
-"response = rsync.send_to_project(source)
-"return_response = response[1]
+response = rsync.project_sync(source, vim.eval("a:direction"))
+return_response = response[1]
 
-"vim.command("return '" + return_response + "'")
+vim.command("return '" + return_response + "'")
 
-"endpython
-
-"endfunction
-
-function! vimpy#rsync_file_to_project()
-
-	echo system('python ~/dotfiles/python/rsync_send_to_project.py "' . expand('%:p') . '"')
+endpython
 
 endfunction
 
-map <Leader>rs :echo vimpy#rsync_file_to_project()<CR>
+map <Leader>rp :echo vimpy#rsync_project('put')<CR>
+map <Leader>rg :echo vimpy#rsync_project('get')<CR>:e!<CR>
+
+" TODO Fix macvim issue with using vimpy#rsync_project to avoid the need to call the python script directly
+map <Leader>rsp :echo system('python ~/dotfiles/python/rsync_send_to_project.py "' . expand('%:p') . '" put')
+map <Leader>rsg :echo system('python ~/dotfiles/python/rsync_send_to_project.py "' . expand('%:p') . '" get')

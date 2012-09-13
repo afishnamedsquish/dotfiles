@@ -160,6 +160,7 @@ vmap <Leader>d :call PhpDocRange()<CR>
 let g:ctrlp_root_markers = ['.root-dir']
 let g:ctrlp_working_path_mode = 2
 map <C-B> :CtrlPBuffer<CR>
+map <C-O> :CtrlPMixed<CR>
 
 " Syntastic
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes' : ['php'] }
