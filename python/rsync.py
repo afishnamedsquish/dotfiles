@@ -6,33 +6,39 @@ import projectpath
 opts = "-rltD --progress --exclude='*.swp' --exclude='*.bak'"
 ssh_config_path = os.path.abspath(os.path.expanduser('~/.ssh/config'))
 
-def send(source, destination, ssh_alias, opts=opts):
+def sync(source, destination, opts=opts):
 
 	source = source.replace(' ', '\ ')
 	destination = destination.replace(' ', '\ ')
-	cmd = 'rsync ' + opts + ' ' +  source + ' ' + ssh_alias + ':' + destination
+	cmd = 'rsync ' + opts + ' ' +  source + ' ' + destination
 	proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
 	return proc.communicate()
 
-def send_to_project(source):
+def project_sync(filename, direction):
 
-	source = os.path.abspath(os.path.expanduser(source))
-	project_path = projectpath.find(source)
+	filename = os.path.abspath(os.path.expanduser(filename))
+	project_path = projectpath.find(filename)
 
 	if project_path == False:
-		return (False, 'Source ' + source + ' not in project path')
+		return (False, 'Filename ' + filename + ' not in project path')
 
-	# if its a directory or if the path doesnt exist, send to parent directory on remote
-	remote_path = source.replace(project_path + os.path.sep, '')
-	if os.path.isdir(source) or os.path.exists(source) == False: 
-		remote_path = os.path.sep.join(remote_path.split(os.path.sep)[0:-1])
+	# if we are putting and (if its a directory or if the path doesnt exist, send to parent directory on remote)
+	remote_filename = filename.replace(project_path + os.path.sep, '')
+	if direction == 'put':
+		if os.path.isdir(filename) or os.path.exists(filename) == False: 
+			remote_filename = os.path.sep.join(remote_filename.split(os.path.sep)[0:-1])
 
 	# TODO Allow for .root-dir to contain project data such as ssh alias
 	# Project Alias for SSH is last dir
 	project_alias = project_path.split(os.path.sep)[-1]
 
+	remote_filename = project_alias + ':' + remote_filename
+
 	if is_ssh_alias(project_alias):
-		result = send(source, remote_path, project_alias)
+		if direction == 'put':
+			result = sync(filename, remote_filename)
+		elif direction == 'get':
+			result = sync(remote_filename, filename)
 		return (True, result[0])
 	else:
 		return (False, 'Invalid SSH alias ' + project_alias)

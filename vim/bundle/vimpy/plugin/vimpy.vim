@@ -27,7 +27,7 @@ endfunction
 
 " Rsync files to project
 
-function! vimpy#rsync_file_to_project()
+function! vimpy#rsync_project(direction)
 
 python << endpython
 
@@ -40,7 +40,7 @@ import rsync
 
 source = vim.eval("expand('%:p')")
 
-response = rsync.send_to_project(source)
+response = rsync.project_sync(source, vim.eval("a:direction"))
 return_response = response[1]
 
 vim.command("return '" + return_response + "'")
@@ -49,4 +49,5 @@ endpython
 
 endfunction
 
-map <Leader>rs :echo vimpy#rsync_file_to_project()<CR>
+map ]r :echo vimpy#rsync_project('put')<CR>
+map [r :echo vimpy#rsync_project('get')<CR>:e!<CR>
