@@ -29,7 +29,7 @@ def send_to_project(source):
 
 	# TODO Allow for .root-dir to contain project data such as ssh alias
 	# Project Alias for SSH is last dir
-	project_alias = project_path.split(os.path.sep)[-1]
+	project_alias = project_path.split(os.path.sep)[-1].lower()
 
 	if is_ssh_alias(project_alias):
 		result = send(source, remote_path, project_alias)

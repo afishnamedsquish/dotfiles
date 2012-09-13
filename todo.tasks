@@ -1,0 +1,42 @@
+Work:
+- Automatically connect to samba on login
+- Re-add automatic wakeup at 8:45
+
+	MVC:
+	- 
+
+	PHP:
+	- Get ImageMagick installed on webserver
+
+	Hearthstone Stoves:
+	✓ troubleshoot javascript issue
+
+	CTM: 
+	✓ Determine how the admin can change intro pack expiration dates
+		This shows up in the Customers Module, only for customers who have an Intro Pack. Example Customer: introb@ctm.com, Date of Signup: 2012-08-10
+	✓ Determine whether expired game files are not appear in module
+		No there are only 113 game files total and all of them are currently being displayed in the backend
+	✓ Retrieve login information for @catchthemania.com email users
+		damon@catchthemania.com/sparks82
+
+	Sparkles:
+	- Refactor cart to look at ProductItems within Subscription Products when determining Monthly costs, becaus ea Product may include multiple subscription products.
+	- In cart for subscriptions, if there are multiple product items then show their names in parens)
+	✓ Don't use product items in 'monthly cost' that are from recurring promos
+
+	ECVT: 
+	✓ estimate: ECVTWe now send a reminder email to people who complete the first but not the second page of the membership application. Hopefully, this will improve conversions rates. However, whenever we want to get the database for membership applications â€“ full and partial â€“ we have to request it from VDW and are charged for its retrieval. Is there any way we can gain direct access to the database? Some time ago, I requested the database for everyone who signed up for this service. Nothing received as yet. (The page has now been de-published)
+
+Personal:
+- Send brendan 8.5x11 sheet with beer labels for printing
+
+Champlain:
+- Get kevin andrews to set up proper drop box for class content and ask to have TextWrangler installed on computers
+- Design file for example champlain website to build in class
+
+Dotfiles:
+
+	VIM: 
+	- Create a vimpy#rsync_get function for retriving the current file from the remote server and re-opening it in the buffer
+	- Fix macvim to be using python 2.7 instead of python 2.6, which doesnt seem to have to os module
+		Currently swapped to calling pythons cript via command line to ensure system version of python is being used, probably need to recompile macvim with python 2.7

@@ -61,6 +61,7 @@ nmap <silent> <Leader>sv :so ~/dotfiles/vim/vimrc<CR>
 nmap <silent> <Leader>ssh :e ~/.ssh/config<CR>
 nmap <silent> <Leader>bashp :e ~/.bash_profile<CR>
 nmap <silent> <Leader>bashr :e ~/.bashrc<CR>
+map <silent> <F3> <ESC>:e ~/dotfiles/todo.tasks<CR>
 
 " toggle between number and relative number on ,l
 nnoremap <Leader>l :call ToggleRelativeAbsoluteNumber()<CR>
@@ -184,7 +185,7 @@ colorscheme solarized
 
 let g:codepath = [$HOME.'/client_sites', $HOME.'/sites']
 
-" TODO Move to a separate plugin, or maybe afterfiles?
+" Text Manipulation
 function! HtmlEscape()
 	silent s/&/\&amp;/eg
 	silent s/</\&lt;/eg
@@ -219,6 +220,9 @@ nnoremap <silent> <Leader>h :call HtmlEscape()<CR>
 nnoremap <silent> <Leader>H :call HtmlUnEscape()<CR>
 vnoremap <silent> <Leader>h :call HtmlEscape()<CR>
 vnoremap <silent> <Leader>H :call HtmlUnEscape()<CR>
+
+" Change case to titling
+nmap <Leader>tit :s/\<\(\w\)\(\w*\)\>/\u\1\L\2/g<CR>
 
 " Start NERDTree on launch and focus file
 "autocmd VimEnter * NERDTree
