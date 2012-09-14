@@ -253,6 +253,7 @@ alias gdff='git diff FETCH_HEAD'
 alias glf='git log FETCH_HEAD'
 alias gmf='git merge FETCH_HEAD'
 alias gfo='git fetch origin'
+alias gfom='git fetch origin master'
 alias gpo='git push origin'
 
 export EDITOR=vim

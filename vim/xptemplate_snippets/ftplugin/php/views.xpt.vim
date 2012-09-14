@@ -9,12 +9,12 @@ XPT view_header
 $title = "`title^";
 $this->setTitle($title);
 $this->setHeading($title);
-$html->formatErrors($data['errors']);
-$html->formatMessage($session->getFlash());
+echo $html->formatErrors($data['errors']);
+echo $html->formatMessage($session->getFlash());
 
 XPT view_pagination
 <?
-$pagination_html = $html->pagination(`pagination_url_format^, $data['`page^'], $data['`total_pages^'] ? range(1, $data['`total_pages^']) ? array());
+$pagination_html = $html->pagination(`pagination_url_format^, $data['`page^'], $data['`total_pages^'] ? range(1, $data['`total_pages^']) : array());
 echo $pagination_html;
 ?>
 
@@ -25,14 +25,14 @@ echo $letter_filter_html;
 ?>
 
 XPT view_search_form
-<? echo $form->create(array('controller' => '`controller^', 'action' => '`search^'), '`form_id^', array(), array('method' => 'get', 'class' => 'l-condensed')); ?>
+<? echo $form->create(array('controller' => '`controller^', 'action' => '`search^'), '`form_id^', array(), array('method' => 'get', 'class' => 'l-single')); ?>
 	<fieldset>
 		<ul>
 			<? echo $form->input('`search_field_name^', '`search_field_name^', $data['SearchCriteria']['`search_field_name^'], '`search_field_label^'); ?>
 			<? echo $form->hidden('data[is_posted]', 'is_posted', 1); ?>
+			<? echo $form->submit('`Search^', array('wrapper' => false)); ?>
+			<li><?= $html->link('`clear_url^', 'Clear'); ?></li>
 		</ul>
-		<? echo $form->submit('`Search^'); ?>
-		<?= $html->link('`clear_url^', 'Clear'); ?>
 	</fieldset>
 </form>
 
