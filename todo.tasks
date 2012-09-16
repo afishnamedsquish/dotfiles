@@ -1,27 +1,64 @@
 Work:
 - Automatically connect to samba on login
+- Order laptop
 
 	PHP:
 	- Get ImageMagick installed on webserver
 
 	Sparkles:
-	✓ Refactor cart to look at ProductItems within Subscription Products when determining Monthly costs, becaus ea Product may include multiple subscription products.
-	✓ In cart for subscriptions, if there are multiple product items then show their names in parens)
-	✓ Don't use product items in 'monthly cost' that are from recurring promos
-	✓ Ask Ross whether we need to use a different logic for pulling series stories in the admin view because of sample packs delivering the same assets?
-	✓ Use random user sub id for comped stories
-	- Monday: review order product item id removal from user asset table and replacement with product id code, which is all in 'HF_add_user_asset_product_id' branch
+
+		Future:
+		- Fix bug on user manager subscriptions view where clicking the subscribe button repeatedly increases the price.
+		- Once UserSubscription admin section is done, re-use code to redo user section to include Completed part
+		- review order product item id removal from user asset table and replacement with product id code, which is all in 'HF_add_user_asset_product_id' branch
+
+		Client Estimate:
+
+		Completed:
+		✓ Refactor cart to look at ProductItems within Subscription Products when determining Monthly costs, becaus ea Product may include multiple subscription products.
+		✓ In cart for subscriptions, if there are multiple product items then show their names in parens)
+		✓ Don't use product items in 'monthly cost' that are from recurring promos
+		✓ Ask Ross whether we need to use a different logic for pulling series stories in the admin view because of sample packs delivering the same assets?
+		✓ Use random user sub id for comped stories
+
+	User Sub Management (Front/Backend) Ideas:
+		- Discuss with Ross
+			- Assuming that the sub with the highest end date is the most recent and using it for start/end/cancel dates in admin view. Should I use start date?
+			- When merging in with dev/master, need to update Admin::userStorybox to pass $user instead of $user_id to getAllSeriesStories method.
+			- Strange user charge history on user_id 80, looks like they are getting charged $7/day
+		* User Manage Subscriptions frontend
+			- Dont allow changing of comp'd subscriptions or include them in the monthly price
+		* UserSubscription::getAllSeriesAndSubscriptions($user_id)
+			* return all series along with any associated user subscriptions
+			* include yes/no of is_completed for each series based on owning all 52 stories
+		* UserSubscription::comp($user, $series)
+			* Cancel any current subscriptions, create new subscription 
+
+							OR
+
+			* Add check for current sub and assignment to $row['CurrentSubscription']
+			* Change the current subscription to status comped else create new comped user subscription.<<<this one?
+				* If they have an existing, set status to cancelled it and set end date to today (correct on end date? ask ross)
+				* Subscriptions can be comped as long as the user has not completed the subscription (has 52 stories)
+				* Comping a subscription cancels any current subscriptions and creates a new subscription
+					* type: comped
+					* status: current
+					* start date: today
+					* end date: same as origin sub or 12 months for new comps (is this an issue with subscriptions to user has already started? probably not the cron wont re-drop stories)
+					* user_id: user's id
+					* series_id: the series id
+					* Do we need to dropCurrentStory?
+				* Admin can't convert a comped subscription to paid. They can cancel the comp which cancels the subscription. If they want to then re-subscribe the user they can login as the user or ask the user to re-subscribe.
+
 
 		Sparkles Admin:
 		- User Subscriptions
-		- User Charge History
-		- User Story box
-		- User Details
-		- User Deactivation
-
-	Daikin:
-	✓ Provide an estimate for the following items to Donna
-	✓ Update the google doc "DAikin Admin Estimates" and post as PDF in basecamp for Wendy @ https://vermontdesignworks.basecamphq.com/projects/9543732-daikin-phase-one/posts/66201477/comments#197460980
+		
+			Push the Production:
+			✓ User Charge History
+			✓ User Story box
+			✓ User Details
+			✓ User Deactivation
 
 Personal:
 - Fix tent for HFS harvest
@@ -30,6 +67,7 @@ Personal:
 Champlain:
 - Get kevin andrews to set up proper drop box for class content and ask to have TextWrangler installed on computers
 - Design file for example champlain website to build in class
+- Get CS installed for free adjunct style
 
 Dotfiles:
 
