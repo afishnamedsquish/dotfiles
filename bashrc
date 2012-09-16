@@ -97,8 +97,6 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-export PS1="\n\[\033[1;36m\]\u\[\033[1;37m\] \[\033[0;36m\]`date`\n\[\033[0m\][\[\033[1;33m\]\w\[\033[0m\]] "
-
 # Derek Wyatt's Directory Stack
 # https://gist.github.com/1154129
 export DIRSTACK_MAX=15
@@ -309,6 +307,18 @@ function csd
     return $?
   fi
 } 
+
+function parse_git_branch {
+  ref=$(git-symbolic-ref HEAD 2> /dev/null) || return
+  echo "("${ref#refs/heads/}")"
+}
+
+yellow='\e[0;33m' # Yellow
+blue='\e[0;34m' # Blue
+purple='\e[0;35m' # Purple
+cyan='\e[0;36m' # Cyan
+white='\e[0;37m' # White
+export PS1="\n\[\033[1;36m\]\u\[\033[1;37m\] \[\033[0;36m\]`date`\n\[\033[0m\][\[\033[1;33m\]\w\[\033[0m\]]$yellow\$(__git_ps1)$white\$ "
 
 alias cd=cd_
 alias ll='ls -alF'
