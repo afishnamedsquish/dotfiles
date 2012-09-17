@@ -253,4 +253,10 @@ let g:xptemplate_goback = '<C-[>'
 let g:xptemplate_pum_tab_nav = 1
 nmap <C-F7> :XPTreload<CR>
 
-autocmd VimEnter * CtrlPMRU
+" if there were no arguments passed, open ctrlpmru
+autocmd VimEnter * call VimEnterHandler()
+function! VimEnterHandler()
+	if empty(argv())
+		:CtrlPMRU
+	endif
+endfunction
