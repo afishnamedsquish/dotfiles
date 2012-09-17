@@ -55,6 +55,9 @@ map <Leader>fr :let @+=expand('%')<CR>:echo expand('%')<CR>
 map <Leader>fp :let @+=expand('%:p')<CR>:echo expand('%:p')<CR>
 map <Leader>sc <ESC>:Scratch<CR>
 
+" unmap dangerous visual mode lowercase
+vmap u <Nop>
+
 " Edit common files
 nmap <silent> <Leader>ev :e ~/dotfiles/vim/vimrc<CR>
 nmap <silent> <Leader>sv :so ~/dotfiles/vim/vimrc<CR>
@@ -249,3 +252,5 @@ let g:xptemplate_to_right = '<C-]>'
 let g:xptemplate_goback = '<C-[>'
 let g:xptemplate_pum_tab_nav = 1
 nmap <C-F7> :XPTreload<CR>
+
+autocmd VimEnter * CtrlPMRU

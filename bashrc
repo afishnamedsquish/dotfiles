@@ -318,7 +318,7 @@ blue='\e[0;34m' # Blue
 purple='\e[0;35m' # Purple
 cyan='\e[0;36m' # Cyan
 white='\e[0;37m' # White
-export PS1="\n\[\033[1;36m\]\u\[\033[1;37m\] \[\033[0;36m\]`date`\n\[\033[0m\][\[\033[1;33m\]\w\[\033[0m\]]$yellow\$(__git_ps1)$white\$ "
+export PS1="\n\[\033[1;36m\]\u\[\033[1;37m\] \[\033[0;36m\]`date`\n\[\033[0m\][\[\033[1;33m\]\w\[\033[0m\]]\[$yellow\]\$(__git_ps1)\[$white\]\$ "
 
 alias cd=cd_
 alias ll='ls -alF'
@@ -347,3 +347,5 @@ alias gpo='git push origin'
 
 # Add to python path
 export PYTHONPATH=$PYTHONPATH:$HOME/dotfiles/python
+
+set bell-style none
