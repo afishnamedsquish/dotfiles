@@ -41,3 +41,8 @@ nine `expand me...{{^`:epsilon:^` `expand me...^`}}^
 
 XPT arr
 `expand me...{{^`myvar`, ^` `expand me...^`}}^
+
+XPT vdwip
+if ($_SERVER['REMOTE_ADDR'] == '75.149.135.98') {
+	`cursor^
+}
