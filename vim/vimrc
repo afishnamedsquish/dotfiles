@@ -1,4 +1,4 @@
-let g:pathogen_disabled = []
+let g:pathogen_disabled = ['vim-snipmate']
 call pathogen#infect()
 call pathogen#helptags()
 
@@ -175,9 +175,6 @@ let s:php_executable = 'php'
 hi link EasyMotionTarget ErrorMsg
 hi link EasyMotionShade Comment
 
-" SuperTab
-let g:SuperTabClosePreviewOnPopupClose = 1
-
 " Color Scheme
 set background=dark
 let g:solarized_termtrans=1
@@ -185,8 +182,6 @@ let g:solarized_termcolors=256
 let g:solarized_contrast="high"
 let g:solarized_visibility="high"
 colorscheme solarized
-
-let g:codepath = [$HOME.'/client_sites', $HOME.'/sites']
 
 " Text Manipulation
 function! HtmlEscape()
@@ -227,18 +222,6 @@ vnoremap <silent> <Leader>H :call HtmlUnEscape()<CR>
 " Change case to titling
 nmap <Leader>tit :s/\<\(\w\)\(\w*\)\>/\u\1\L\2/g<CR>
 
-" Start NERDTree on launch and focus file
-"autocmd VimEnter * NERDTree
-"autocmd BufEnter * NERDTreeMirror
-"autocmd VimEnter * wincmd w
-
-" Examples
-" language specific setting
-" autocmd filetype python set expandtab
-
-" PHP
-"autocmd FileType php setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
-
 " XPTemplate
 let g:xptemplate_key = '<C-T>'
 let g:xptemplate_snippet_folders = [$HOME.'/dotfiles/vim/xptemplate_snippets']
@@ -251,6 +234,12 @@ let g:xptemplate_to_right = '<C-]>'
 let g:xptemplate_goback = '<C-[>'
 let g:xptemplate_pum_tab_nav = 1
 nmap <C-F7> :XPTreload<CR>
+
+" Autocompletion 
+let g:SuperTabClosePreviewOnPopupClose = 1
+let g:SuperTabDefaultCompletionType = "<C-X><C-]>"
+set completeopt=longest,menuone,preview
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
 " if there were no arguments passed, open ctrlpmru
 autocmd VimEnter * call VimEnterHandler()
