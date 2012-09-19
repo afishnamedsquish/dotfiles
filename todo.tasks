@@ -3,17 +3,14 @@ Work:
 - Get ImageMagick installed on webserver
 
 	Sparkles:
-
-		Future:
-		- User Manage Subscriptions rewrite
-			- Use UserSubscription::getAllSeriesAndSubscriptions
-			- Do not allow modification of comped subscriptions
-			- Show completed subscriptions at the bottom
-			- Fix bug on user manager subscriptions view where clicking the subscribe button repeatedly increases the price.
+	- Google Analytics ecom tracking research/estimate
 
 Personal:
-- Book hotel for Brendan's wedding
+- Call sugarbush about mt ellent
 - Get a lana a birthday present
+- Primary care physician
+- Pay VSAC
+- Bills
 
 Champlain:
 - Design file for example champlain website to build in class
