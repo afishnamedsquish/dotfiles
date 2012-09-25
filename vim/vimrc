@@ -101,10 +101,10 @@ vmap <C-Up> xkP`[V`]
 vmap <C-Down> xp`[V`]
 
 " wrap
-map <Leader>wr <ESC>:set wrap!<CR>
+map <Leader>rr <ESC>:set wrap!<CR>
 
 " list whitespace
-map <Leader>ww :set list!<CR>
+map <Leader>sw :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
 
 " make up/down go to next row in editor instead of next line
@@ -129,7 +129,7 @@ nmap <Leader>c <Plug>NERDCommenterToggle
 vmap <Leader>c <Plug>NERDCommenterToggle 
 
 " Tabs
-map <Leader>wt <C-W>T
+"map <Leader>wt <C-W>T
 map <Leader>tc :tabc<CR>
 map <Leader>te :tabe 
 map <Leader>to :tabo<CR>
@@ -236,8 +236,8 @@ let g:xptemplate_pum_tab_nav = 1
 nmap <C-F7> :XPTreload<CR>
 
 " Autocompletion 
-let g:SuperTabClosePreviewOnPopupClose = 1
-let g:SuperTabDefaultCompletionType = "<C-X><C-]>"
+let g:SuperTabDefaultCompletionType = 'context'
+"let g:SuperTabClosePreviewOnPopupClose = 1
 set completeopt=longest,menuone,preview
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
@@ -248,6 +248,9 @@ function! VimEnterHandler()
 		:CtrlPMRU
 	endif
 endfunction
+
+" VimWiki
+let g:vimwiki_list = [{'path': $HOME.'/dotfiles/vim/wiki/', 'path_html': $HOME.'/dotfiles/vim/wiki/public_html/'}]
 
 " attempt to get vim to use ctags settings to ensure php includes constant definitons and NOT inline variables
 "let g:tagbar_type_php = {
