@@ -79,3 +79,6 @@
 [submodule "vim/bundle/vim-php-namespace"]
 	path = vim/bundle/vim-php-namespace
 	url = https://github.com/arnaud-lb/vim-php-namespace.git
+[submodule "vim/bundle/vim-twig"]
+	path = vim/bundle/vim-twig
+	url = git://github.com/beyondwords/vim-twig.git
