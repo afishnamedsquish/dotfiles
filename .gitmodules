@@ -73,3 +73,9 @@
 [submodule "vim/bundle/phpcomplete.vim"]
 	path = vim/bundle/phpcomplete.vim
 	url = https://github.com/shawncplus/phpcomplete.vim.git
+[submodule "vim/bundle/vim-symfony"]
+	path = vim/bundle/vim-symfony
+	url = https://github.com/docteurklein/vim-symfony.git
+[submodule "vim/bundle/vim-php-namespace"]
+	path = vim/bundle/vim-php-namespace
+	url = https://github.com/arnaud-lb/vim-php-namespace.git
