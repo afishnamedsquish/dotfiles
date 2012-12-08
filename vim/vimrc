@@ -201,12 +201,6 @@ nnoremap <silent> <Leader>H :call HtmlUnEscape()<CR>
 vnoremap <silent> <Leader>h :call HtmlEscape()<CR>
 vnoremap <silent> <Leader>H :call HtmlUnEscape()<CR>
 
-" PHP Namespace
-map <buffer> <Leader>u <C-O>:call PhpInsertUse()<CR>
-map <buffer> <Leader>u :call PhpInsertUse()<CR>
-imap <buffer> <Leader>e <C-O>:call PhpExpandClass()<CR>
-map <buffer> <Leader>e :call PhpExpandClass()<CR>
-
 " Autocompletion 
 let g:SuperTabClosePreviewOnPopupClose = 1
 let g:SuperTabDefaultCompletionType = "<C-X><C-]>"
