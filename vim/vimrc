@@ -16,6 +16,7 @@ set wildmenu
 set wildmode=list:longest
 set wildignore=.git,*.swp,*.jpg,*.png,*.gif,*app/cache/**,*app/logs/**
 set visualbell
+set clipboard=unnamed
 
 " smoother plugins
 set lazyredraw
