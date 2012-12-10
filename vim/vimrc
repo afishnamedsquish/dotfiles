@@ -1,11 +1,9 @@
-let g:pathogen_disabled = ['vim-snipmate']
+let g:pathogen_disabled = ['xptemplate']
 call pathogen#infect()
 call pathogen#helptags()
 
 set mouse=a
 syntax enable
-set nobackup
-set noswapfile
 set pastetoggle=<F3>
 set t_Co=256
 set number
@@ -16,9 +14,23 @@ set scrolloff=3
 set cul
 set wildmenu
 set wildmode=list:longest
-set vb
+set wildignore=.git,*.swp,*.jpg,*.png,*.gif,*app/cache/**,*app/logs/**
+set visualbell
+set clipboard=unnamed
 
-" System default for mappings is now the "," character
+" smoother plugins
+set lazyredraw
+
+" scrolling
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
+
+" dont save backups
+set nobackup
+set nowritebackup
+set noswapfile
+
+" Remap leader
 let mapleader = ","
 
 " search
@@ -26,6 +38,7 @@ set ignorecase
 set smartcase
 set hlsearch
 set tags=tags;/
+nmap <silent> ,/ :set hlsearch!<CR>
 
 " indenting
 set smartindent
@@ -36,11 +49,9 @@ filetype plugin indent on
 " buffers
 set autowrite
 set hidden 
+
 " Wipe out all buffers
 nmap <silent> <Leader>wa :1,9000bwipeout<cr>
-nmap <Leader>da ggdG
-map <C-j> :bprev<CR>
-map <C-k> :bnext<CR>
 
 " bindings
 nnoremap ; :
@@ -48,7 +59,6 @@ vnoremap ; :
 map <Leader>' :b#<CR>
 map <C-C> "+y
 map <C-A> <ESC>ggVG
-nmap <silent> ,/ :set hlsearch!<CR>
 map <Leader>M :%s/<C-V><C-M>//g<CR>
 map <Leader>ff :let @+=expand('%:t')<CR>:echo expand('%:t')<CR>
 map <Leader>fr :let @+=expand('%')<CR>:echo expand('%')<CR>
@@ -66,20 +76,7 @@ nmap <silent> <Leader>bashp :e ~/.bash_profile<CR>
 nmap <silent> <Leader>bashr :e ~/.bashrc<CR>
 map <silent> <F3> <ESC>:e ~/dotfiles/todo.tasks<CR>
 
-" toggle between number and relative number on ,l
-nnoremap <Leader>l :call ToggleRelativeAbsoluteNumber()<CR>
-function! ToggleRelativeAbsoluteNumber()
-  if &number
-    set relativenumber
-  else
-    set number
-  endif
-endfunction
-
-" Try jj for esc
-imap jj <esc>
-
-" comments
+" dont auto insert comments
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " quickfix
@@ -104,8 +101,8 @@ vmap <C-Down> xp`[V`]
 map <Leader>rr <ESC>:set wrap!<CR>
 
 " list whitespace
-map <Leader>sw :set list!<CR>
-set listchars=tab:▸\ ,eol:¬
+map <Leader>l :set list!<CR>
+set listchars=tab:▸\ ,eol:¬,trail:¤
 
 " make up/down go to next row in editor instead of next line
 nnoremap j gj
@@ -127,20 +124,6 @@ let g:NERDTreeWinSize = 25
 let NERDCreateDefaultMappings = 0
 nmap <Leader>c <Plug>NERDCommenterToggle
 vmap <Leader>c <Plug>NERDCommenterToggle 
-
-" Tabs
-"map <Leader>wt <C-W>T
-map <Leader>tc :tabc<CR>
-map <Leader>te :tabe 
-map <Leader>to :tabo<CR>
-map <A-]> gt
-map <A-[> gT
-map <A-1> 1gt
-map <A-2> 2gt
-map <A-3> 3gt
-map <A-4> 4gt
-map <A-5> 5gt
-map <A-0> :tablast<CR>
 
 " Vim-Task
 inoremap <silent> <Leader>tt <ESC>:call Toggle_task_status()<CR>i
@@ -218,22 +201,6 @@ nnoremap <silent> <Leader>h :call HtmlEscape()<CR>
 nnoremap <silent> <Leader>H :call HtmlUnEscape()<CR>
 vnoremap <silent> <Leader>h :call HtmlEscape()<CR>
 vnoremap <silent> <Leader>H :call HtmlUnEscape()<CR>
-
-" Change case to titling
-nmap <Leader>tit :s/\<\(\w\)\(\w*\)\>/\u\1\L\2/g<CR>
-
-" XPTemplate
-let g:xptemplate_key = '<C-T>'
-let g:xptemplate_snippet_folders = [$HOME.'/dotfiles/vim/xptemplate_snippets']
-let g:xptemplate_brace_complete = 0
-let g:xptemplate_key_pum_only = '<Leader><Tab>'
-imap <C-d> <Tab>
-let g:xptemplate_nav_cancel = '<C-d>'
-let g:xptemplate_nav_next = '<Tab>'
-let g:xptemplate_to_right = '<C-]>'
-let g:xptemplate_goback = '<C-[>'
-let g:xptemplate_pum_tab_nav = 1
-nmap <C-F7> :XPTreload<CR>
 
 " Autocompletion 
 let g:SuperTabDefaultCompletionType = 'context'

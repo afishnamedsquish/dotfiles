@@ -2,6 +2,7 @@
 --exclude=.git 
 --exclude=work 
 --exclude=public_html/blog 
+--exclude=app/cache
 --exclude=*.sql
 --exclude=*.js
 --tag-relative=yes 
