@@ -1,0 +1,37 @@
+## Add Widescreen Resolutions
+TODO: Make this permanent
+cvt 1920 1080
+xrandr --newmode "1280x720_60.00"   74.50  1280 1344 1472 1664  720 723 728 748 -hsync +vsync
+xrandr --addmode VBOX0 1280x720_60.00
+
+## Enable Stumpwm Window Manager
+/usr/share/xsessions/stumpwm.desktop
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Exec=stumpwm --replace
+TryExec=stumpwm
+Name=StumpWM
+Comment=Stump Window Manager
+
+## Remap stumpwm key to Control space, turn on modeline
+~/.stumpwmrc
+;; Remap prefix
+(in-package :stumpwm)
+(set-prefix-key (kbd "C-SPC"))
+
+;; Switch mode-line on
+(if (not (head-mode-line (current-head)))
+    (toggle-mode-line (current-screen) (current-head)))
+
+## Run jockey-gtk to install and find additional drivers
+
+## Remap caps lock to control
+~/.Xmodmap
+!
+! Remap Caps to Control
+!
+remove Lock = Caps_Lock
+remove Control = Control_L
+keysym Caps_Lock = Control_L
+add Control = Control_L
