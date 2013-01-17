@@ -8,3 +8,11 @@ snippet foreachkil
 	<? foreach ($${1:variable} as $${2:key} => $${3:value}): ?>
 		${4:<!-- html... -->}
 	<? endforeach; ?>
+snippet vdwip
+	if ($_SERVER['REMOTE_ADDR'] === '75.149.135.98') {
+		${1};
+	}
+snippet vdwipil
+	<?php if ($_SERVER['REMOTE_ADDR'] === '75.149.135.98'): ?>
+		<?php ${1}; ?>
+	<?php endif; ?>

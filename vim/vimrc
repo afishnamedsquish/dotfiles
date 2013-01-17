@@ -34,6 +34,7 @@ set noswapfile
 let mapleader = ","
 
 " search
+set incsearch
 set ignorecase
 set smartcase
 set hlsearch
@@ -54,8 +55,6 @@ set hidden
 nmap <silent> <Leader>wa :1,9000bwipeout<cr>
 
 " bindings
-nnoremap ; :
-vnoremap ; :
 map <Leader>' :b#<CR>
 map <C-C> "+y
 map <Leader>M :%s/<C-V><C-M>//g<CR>
@@ -90,11 +89,9 @@ map <Leader>b] <ESC>:bn<CR>
 map <Leader>w[ <ESC>:wp<CR>
 map <Leader>w] <ESC>:wp<CR>
 
-" move lines
-nmap <C-Up> ddkP
-nmap <C-Down> ddp
-vmap <C-Up> xkP`[V`]
-vmap <C-Down> xp`[V`]
+" marks
+nnoremap ' `
+nnoremap ` '
 
 " wrap
 map <Leader>rr <ESC>:set wrap!<CR>
