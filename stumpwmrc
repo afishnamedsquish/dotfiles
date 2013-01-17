@@ -1,0 +1,7 @@
+;; Remap prefix
+(in-package :stumpwm)
+(set-prefix-key (kbd "C-SPC"))
+
+;; Switch mode-line on
+(if (not (head-mode-line (current-head)))
+    (toggle-mode-line (current-screen) (current-head)))
