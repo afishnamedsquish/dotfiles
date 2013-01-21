@@ -54,6 +54,12 @@ set hidden
 " Wipe out all buffers
 nmap <silent> <Leader>wa :1,9000bwipeout<cr>
 
+" Command mode
+nnoremap ; :
+vnoremap ; :
+nnoremap <Leader>; ;
+nnoremap <Leader>,; ,
+
 " bindings
 map <Leader>' :b#<CR>
 map <C-C> "+y
