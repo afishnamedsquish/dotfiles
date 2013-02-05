@@ -1,4 +1,4 @@
-let g:pathogen_disabled = ['xptemplate']
+let g:pathogen_disabled = ['xptemplate', 'vim-symfony', 'vim-snipmate']
 call pathogen#infect()
 call pathogen#helptags()
 
@@ -100,10 +100,10 @@ nnoremap ' `
 nnoremap ` '
 
 " wrap
-map <Leader>rr <ESC>:set wrap!<CR>
+map <Leader>sw <ESC>:set wrap!<CR>
 
 " list whitespace
-map <Leader>l :set list!<CR>
+map <Leader>sl :set list!<CR>
 set listchars=tab:▸\ ,eol:¬,trail:¤
 
 " make up/down go to next row in editor instead of next line
@@ -204,9 +204,10 @@ vnoremap <silent> <Leader>h :call HtmlEscape()<CR>
 vnoremap <silent> <Leader>H :call HtmlUnEscape()<CR>
 
 " Autocompletion 
+set completeopt=menuone,preview,longest
 let g:SuperTabDefaultCompletionType = 'context'
-"let g:SuperTabClosePreviewOnPopupClose = 1
-set completeopt=longest,menuone,preview
+let g:SuperTabClosePreviewOnPopupClose = 1
+let g:SuperTabLongestHighlight = 1
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
 " if there were no arguments passed, open ctrlpmru
