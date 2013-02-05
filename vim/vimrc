@@ -219,9 +219,3 @@ endfunction
 
 " VimWiki
 let g:vimwiki_list = [{'path': $HOME.'/dotfiles/vim/wiki/', 'path_html': $HOME.'/dotfiles/vim/wiki/public_html/'}]
-
-" attempt to get vim to use ctags settings to ensure php includes constant definitons and NOT inline variables
-"let g:tagbar_type_php = {
-	"\ 'ctagstype' : 'php',
-	"\ 'ctagsargs' : '-x -R --exclude=.git --exclude=work --exclude=public_html/blog --exclude=public_html/assets/js --tag-relative=yes --regex-PHP="/abstract[ \t]+class[ \t]+([^ ]+)/\1/c/" --regex-PHP="/interface[ \t]+([^ ]+)/\1/c/" --regex-PHP="/const[ \t]+([^ \t=]+)/\1/d/" --regex-PHP="/(public[ \t]+|static[ \t]+|abstract[ \t]+|protected[ \t]+|private[ \t]+)function[ \t]+\&?[ \t]*([^ (]+)/\2/f/" --regex-PHP="/(public[ \t]+|static[ \t]+|abstract[ \t]+|protected[ \t]+|private[ \t]+)\$([^ (]+)/\2/m/" --PHP-kinds=+cfdm-v'
-"\ }
