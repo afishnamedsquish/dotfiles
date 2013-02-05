@@ -31,7 +31,7 @@ set nowritebackup
 set noswapfile
 
 " Remap leader
-let mapleader = ","
+let mapleader = " "
 
 " search
 set incsearch
