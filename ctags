@@ -1,8 +1,11 @@
 -R 
 --exclude=.git 
+--exclude=.bak 
 --exclude=work 
---exclude=public_html/blog 
---exclude=app/cache
+--exclude=www
+--exclude=public_html
+--exclude=log
+--exclude=cache
 --exclude=*.sql
 --exclude=*.js
 --tag-relative=yes 
