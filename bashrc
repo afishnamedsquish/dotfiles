@@ -349,3 +349,4 @@ alias gpo='git push origin'
 export PYTHONPATH=$PYTHONPATH:$HOME/dotfiles/python
 
 set bell-style none
+stty -ixon
