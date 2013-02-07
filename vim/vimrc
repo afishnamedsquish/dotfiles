@@ -92,7 +92,7 @@ map <Leader>q[ <ESC>:cp<CR>
 map <Leader>b[ <ESC>:bn<CR>
 map <Leader>b] <ESC>:bn<CR>
 map <Leader>w[ <ESC>:wp<CR>
-map <Leader>w] <ESC>:wp<CR>
+map <Leader>w] <ESC>:wn<CR>
 
 " marks
 nnoremap ' `
@@ -137,6 +137,20 @@ map <F6> <Esc>:EnableFastPHPFolds<CR>
 " taglist
 map <F8> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
+
+" Edit another file in the same directory as the current file
+map <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
+map <Leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
+map <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
+
+" Windows
+map <Leader>wc <C-w>c
+map <Leader>ww <C-w>w
+map <Leader>wr <C-w><C-r>
+
+" Fugitive
+map <Leader>gc :Gcommit<CR>
+map <Leader>gs :Gstatus<CR>
 
 " pdv - PHPDocumenter
 imap <Leader>d <ESC>:call PhpDocSingle()<CR>i 
