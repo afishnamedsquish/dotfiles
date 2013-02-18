@@ -62,7 +62,6 @@ nmap <silent> ,md :!mkdir -p %:p:h<CR>
 " Command mode
 nnoremap ; :
 vnoremap ; :
-nnoremap <Leader>; ;
 
 " bindings
 map <Leader>' :b#<CR>
