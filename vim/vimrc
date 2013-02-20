@@ -212,7 +212,7 @@ let g:SuperTabLongestHighlight = 1
 " if there were no arguments passed, open ctrlpmru
 autocmd VimEnter * call VimEnterHandler()
 function! VimEnterHandler()
-	if empty(argv())
+	if empty(argv()) && bufnr('$') == 1
 		:CtrlPMRU
 	endif
 endfunction
