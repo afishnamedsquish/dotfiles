@@ -77,7 +77,6 @@ nmap <silent> <Leader>sv :so ~/dotfiles/vim/vimrc<CR>
 nmap <silent> <Leader>ssh :e ~/.ssh/config<CR>
 nmap <silent> <Leader>bashp :e ~/.bash_profile<CR>
 nmap <silent> <Leader>bashr :e ~/.bashrc<CR>
-map <silent> <F3> <ESC>:e ~/dotfiles/todo.tasks<CR>
 
 " dont auto insert comments
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -142,11 +141,6 @@ let g:tagbar_autofocus = 1
 map <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
 map <Leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
 map <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
-
-" Windows
-map <Leader>wc <C-w>c
-map <Leader>ww <C-w>w
-map <Leader>wr <C-w><C-r>
 
 " Fugitive
 map <Leader>gc :Gcommit<CR>
@@ -232,4 +226,4 @@ function! VimEnterHandler()
 endfunction
 
 " VimWiki
-let g:vimwiki_list = [{'path': $HOME.'/dotfiles/vim/wiki/', 'path_html': $HOME.'/dotfiles/vim/wiki/public_html/'}]
+let g:vimwiki_list = [{'path': $HOME.'/Dropbox/vimwiki/', 'path_html': $HOME.'/Dropbox/vimwiki/html/'}]
