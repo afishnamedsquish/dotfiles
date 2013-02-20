@@ -82,9 +82,6 @@ nmap <silent> <Leader>ssh :e ~/.ssh/config<CR>
 nmap <silent> <Leader>bashp :e ~/.bash_profile<CR>
 nmap <silent> <Leader>bashr :e ~/.bashrc<CR>
 
-" dont auto insert comments
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
 " quickfix
 map <Leader>qq <ESC>:cw<CR>
 map <Leader>qc <ESC>:ccl<CR>
@@ -229,6 +226,7 @@ function! VimEnterHandler()
 endfunction
 
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+
 " dont auto insert comments
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
