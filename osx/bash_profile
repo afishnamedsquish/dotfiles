@@ -242,6 +242,7 @@ alias ics='cd ~/ics'
 alias gvim='mvim'
 alias v='mvim'
 
+alias gds='git diff --staged'
 alias gs='git status'
 alias ga='git add'
 alias gl='git log'
