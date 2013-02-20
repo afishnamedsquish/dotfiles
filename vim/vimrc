@@ -42,6 +42,7 @@ set tags=tags;/
 nmap <silent> <Leader>/ :set hlsearch!<CR>
 
 " indenting
+set tw=0
 set smartindent
 set tabstop=4
 set shiftwidth=4
@@ -54,10 +55,13 @@ set hidden
 " Wipe out all buffers
 nmap <silent> <Leader>wa :1,9000bwipeout<cr>
 
+" cd to the directory containing the file in the buffer
+nmap <silent> ,cd :lcd %:h<CR>
+nmap <silent> ,md :!mkdir -p %:p:h<CR>
+
 " Command mode
 nnoremap ; :
 vnoremap ; :
-nnoremap <Leader>; ;
 
 " bindings
 map <Leader>' :b#<CR>
@@ -215,7 +219,6 @@ set completeopt=menuone,preview,longest
 let g:SuperTabDefaultCompletionType = 'context'
 let g:SuperTabClosePreviewOnPopupClose = 1
 let g:SuperTabLongestHighlight = 1
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
 " if there were no arguments passed, open ctrlpmru
 autocmd VimEnter * call VimEnterHandler()
@@ -224,6 +227,10 @@ function! VimEnterHandler()
 		:CtrlPMRU
 	endif
 endfunction
+
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+" dont auto insert comments
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " VimWiki
 let g:vimwiki_list = [{'path': $HOME.'/Dropbox/vimwiki/', 'path_html': $HOME.'/Dropbox/vimwiki/html/'}]
