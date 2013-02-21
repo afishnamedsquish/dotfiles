@@ -73,3 +73,6 @@
 [submodule "vim/bundle/vim-space"]
 	path = vim/bundle/vim-space
 	url = git://github.com/spiiph/vim-space.git
+[submodule "vim/bundle/tComment"]
+	path = vim/bundle/tComment
+	url = git://github.com/vim-scripts/tComment.git
