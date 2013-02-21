@@ -1,4 +1,4 @@
-let g:pathogen_disabled = ['xptemplate']
+let g:pathogen_disabled = ['xptemplate', 'vim-space']
 call pathogen#infect()
 call pathogen#helptags()
 
@@ -20,10 +20,6 @@ set clipboard=unnamed
 
 " smoother plugins
 set lazyredraw
-
-" scrolling
-nnoremap <C-e> 3<C-e>
-nnoremap <C-y> 3<C-y>
 
 " dont save backups
 set nobackup
@@ -52,16 +48,20 @@ filetype plugin indent on
 set autowrite
 set hidden 
 
+" Command mode
+nnoremap ; :
+vnoremap ; :
+
+" scrolling
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
+
 " Wipe out all buffers
 nmap <silent> <Leader>wa :1,9000bwipeout<cr>
 
 " cd to the directory containing the file in the buffer
 nmap <silent> <Leader>cd :lcd %:h<CR>
 nmap <silent> <Leader>md :!mkdir -p %:p:h<CR>
-
-" Command mode
-nnoremap ; :
-vnoremap ; :
 
 " bindings
 map <Leader>' :b#<CR>
