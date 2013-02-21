@@ -88,3 +88,6 @@
 [submodule "vim/bundle/vimwiki"]
 	path = vim/bundle/vimwiki
 	url = git://github.com/vim-scripts/vimwiki.git
+[submodule "vim/bundle/vim-space"]
+	path = vim/bundle/vim-space
+	url = git://github.com/spiiph/vim-space.git
