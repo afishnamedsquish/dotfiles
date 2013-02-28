@@ -159,7 +159,7 @@ let g:ctrlp_working_path_mode = 2
 map <C-B> :CtrlPBuffer<CR>
 
 " Syntastic
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes' : ['php'] }
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes' : ['javascript', 'php'] }
 let g:syntastic_auto_jump = 1
 let g:syntastic_auto_loc_list = 1
 let s:php_executable = 'php'
@@ -227,6 +227,7 @@ function! VimEnterHandler()
 endfunction
 
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType javascript set cindent
 
 " dont auto insert comments
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
