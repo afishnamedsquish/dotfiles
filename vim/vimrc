@@ -115,6 +115,12 @@ nnoremap <Up> gk
 " sudo write this
 cmap W! w !sudo tee % >/dev/null
 
+" Fugitive
+noremap <Leader>gs <ESC>:Gstatus<CR>
+
+" Windows
+noremap <Leader>wc <C-W>c
+
 "Markdown to HTML  
 nmap <Leader>md :%!/usr/local/bin/Markdown.pl --html4tags <CR>
 
@@ -140,9 +146,9 @@ map <F8> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 
 " Edit another file in the same directory as the current file
-map <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
-map <Leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
-map <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
+map <Leader>e :e %/
+map <Leader>s :split %/
+map <Leader>v :vnew %/
 cnoremap % <C-R>=expand('%:p:h')<CR>
 
 " Fugitive
@@ -228,7 +234,6 @@ function! VimEnterHandler()
 endfunction
 
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-autocmd FileType javascript set cindent
 
 " dont auto insert comments
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
