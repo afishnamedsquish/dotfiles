@@ -139,7 +139,6 @@ noremap <silent> <Leader>tt :call Toggle_task_status()<CR>
 
 " php folding with PHPDoc support
 let g:DisableAutoPHPFolding = 1
-map <F6> <Esc>:EnableFastPHPFolds<CR>
 
 " taglist
 map <F8> :TagbarToggle<CR>
@@ -154,11 +153,6 @@ cnoremap % <C-R>=expand('%:p:h')<CR>
 " Fugitive
 map <Leader>gc :Gcommit<CR>
 map <Leader>gs :Gstatus<CR>
-
-" pdv - PHPDocumenter
-imap <Leader>d <ESC>:call PhpDocSingle()<CR>i 
-nmap <Leader>d :call PhpDocSingle()<CR> 
-vmap <Leader>d :call PhpDocRange()<CR> 
 
 " CtrlP
 let g:ctrlp_root_markers = ['.root-dir']
@@ -183,42 +177,6 @@ let g:solarized_contrast="high"
 let g:solarized_visibility="high"
 colorscheme solarized
 
-" Text Manipulation
-function! HtmlEscape()
-	silent s/&/\&amp;/eg
-	silent s/</\&lt;/eg
-	silent s/>/\&gt;/eg
-	silent s/“/\&ldquo;/eg
-	silent s/”/\&rdquo;/eg
-	silent s/™/\&trade;/eg
-	silent s/®/\&reg;/eg
-	silent s/©/\&copy;/eg
-	silent s/‘/\&lsquo;/eg
-	silent s/’/\&rsquo;/eg
-	silent s/–/\&ndash;/eg
-	silent s/—/\&mdash;/eg
-endfunction
-
-function! HtmlUnEscape()
-	silent s/&amp;/\&/eg
-	silent s/&lt;/</eg
-	silent s/&gt;/>/eg
-	silent s/&ldquo;/“/eg
-	silent s/&rdquo;/”/eg
-	silent s/&trade;/™/eg
-	silent s/&reg;/®/eg
-	silent s/&copy;/©/eg
-	silent s/&lsquo;/‘/eg
-	silent s/&rsquo;/’/eg
-	silent s/&ndash;/–/eg
-	silent s/&mdash;/—/eg
-endfunction
-
-nnoremap <silent> <Leader>h :call HtmlEscape()<CR>
-nnoremap <silent> <Leader>H :call HtmlUnEscape()<CR>
-vnoremap <silent> <Leader>h :call HtmlEscape()<CR>
-vnoremap <silent> <Leader>H :call HtmlUnEscape()<CR>
-
 " Autocompletion 
 set completeopt=menuone,preview,longest
 let g:SuperTabDefaultCompletionType = 'context'
@@ -232,8 +190,6 @@ function! VimEnterHandler()
 		:CtrlPMRU
 	endif
 endfunction
-
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
 " dont auto insert comments
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
