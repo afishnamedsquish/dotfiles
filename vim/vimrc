@@ -60,10 +60,6 @@ nnoremap <C-y> 3<C-y>
 " Wipe out all buffers
 nmap <silent> <Leader>wa :1,9000bwipeout<cr>
 
-" cd to the directory containing the file in the buffer
-nmap <silent> <Leader>cd :lcd %:h<CR>
-nmap <silent> <Leader>md :!mkdir -p %:p:h<CR>
-
 " bindings
 map <Leader>' :b#<CR>
 map <C-C> "+y
@@ -145,10 +141,12 @@ map <F8> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 
 " Edit another file in the same directory as the current file
-map <Leader>e :e %/
-map <Leader>s :split %/
-map <Leader>v :vnew %/
 cnoremap %% <C-R>=expand('%:p:h')<CR>
+map <Leader>e :e %%/
+map <Leader>s :split %%/
+map <Leader>v :vnew %%/
+nmap <silent> <Leader>cd :lcd %%<CR>
+nmap <silent> <Leader>md :!mkdir -p %%<CR>
 
 " Fugitive
 map <Leader>gc :Gcommit<CR>
