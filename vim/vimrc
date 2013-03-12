@@ -60,10 +60,6 @@ nnoremap <C-y> 3<C-y>
 " Wipe out all buffers
 nmap <silent> <Leader>wa :1,9000bwipeout<cr>
 
-" cd to the directory containing the file in the buffer
-nmap <silent> <Leader>cd :lcd %:h<CR>
-nmap <silent> <Leader>md :!mkdir -p %:p:h<CR>
-
 " bindings
 map <Leader>' :b#<CR>
 map <C-C> "+y
@@ -139,26 +135,22 @@ noremap <silent> <Leader>tt :call Toggle_task_status()<CR>
 
 " php folding with PHPDoc support
 let g:DisableAutoPHPFolding = 1
-map <F6> <Esc>:EnableFastPHPFolds<CR>
 
 " taglist
 map <F8> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 
 " Edit another file in the same directory as the current file
-map <Leader>e :e %/
-map <Leader>s :split %/
-map <Leader>v :vnew %/
-cnoremap % <C-R>=expand('%:p:h')<CR>
+cnoremap %% <C-R>=expand('%:p:h')<CR>
+map <Leader>e :e %%/
+map <Leader>s :split %%/
+map <Leader>v :vnew %%/
+nmap <silent> <Leader>cd :lcd %%<CR>
+nmap <silent> <Leader>md :!mkdir -p %%<CR>
 
 " Fugitive
 map <Leader>gc :Gcommit<CR>
 map <Leader>gs :Gstatus<CR>
-
-" pdv - PHPDocumenter
-imap <Leader>d <ESC>:call PhpDocSingle()<CR>i 
-nmap <Leader>d :call PhpDocSingle()<CR> 
-vmap <Leader>d :call PhpDocRange()<CR> 
 
 " CtrlP
 let g:ctrlp_root_markers = ['.root-dir']
@@ -183,42 +175,6 @@ let g:solarized_contrast="high"
 let g:solarized_visibility="high"
 colorscheme solarized
 
-" Text Manipulation
-function! HtmlEscape()
-	silent s/&/\&amp;/eg
-	silent s/</\&lt;/eg
-	silent s/>/\&gt;/eg
-	silent s/“/\&ldquo;/eg
-	silent s/”/\&rdquo;/eg
-	silent s/™/\&trade;/eg
-	silent s/®/\&reg;/eg
-	silent s/©/\&copy;/eg
-	silent s/‘/\&lsquo;/eg
-	silent s/’/\&rsquo;/eg
-	silent s/–/\&ndash;/eg
-	silent s/—/\&mdash;/eg
-endfunction
-
-function! HtmlUnEscape()
-	silent s/&amp;/\&/eg
-	silent s/&lt;/</eg
-	silent s/&gt;/>/eg
-	silent s/&ldquo;/“/eg
-	silent s/&rdquo;/”/eg
-	silent s/&trade;/™/eg
-	silent s/&reg;/®/eg
-	silent s/&copy;/©/eg
-	silent s/&lsquo;/‘/eg
-	silent s/&rsquo;/’/eg
-	silent s/&ndash;/–/eg
-	silent s/&mdash;/—/eg
-endfunction
-
-nnoremap <silent> <Leader>h :call HtmlEscape()<CR>
-nnoremap <silent> <Leader>H :call HtmlUnEscape()<CR>
-vnoremap <silent> <Leader>h :call HtmlEscape()<CR>
-vnoremap <silent> <Leader>H :call HtmlUnEscape()<CR>
-
 " Autocompletion 
 set completeopt=menuone,preview,longest
 let g:SuperTabDefaultCompletionType = 'context'
@@ -232,8 +188,6 @@ function! VimEnterHandler()
 		:CtrlPMRU
 	endif
 endfunction
-
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
 " dont auto insert comments
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
