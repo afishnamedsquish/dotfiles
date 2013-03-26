@@ -1,4 +1,4 @@
-let g:pathogen_disabled = ['xptemplate']
+let g:pathogen_disabled = ['xptemplate', 'vim-space']
 call pathogen#infect()
 call pathogen#helptags()
 
@@ -20,10 +20,6 @@ set clipboard=unnamed
 
 " smoother plugins
 set lazyredraw
-
-" scrolling
-nnoremap <C-e> 3<C-e>
-nnoremap <C-y> 3<C-y>
 
 " dont save backups
 set nobackup
@@ -52,16 +48,17 @@ filetype plugin indent on
 set autowrite
 set hidden 
 
-" Wipe out all buffers
-nmap <silent> <Leader>wa :1,9000bwipeout<cr>
-
-" cd to the directory containing the file in the buffer
-nmap <silent> ,cd :lcd %:h<CR>
-nmap <silent> ,md :!mkdir -p %:p:h<CR>
-
 " Command mode
 nnoremap ; :
 vnoremap ; :
+nnoremap <Space> ;
+
+" scrolling
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
+
+" Wipe out all buffers
+nmap <silent> <Leader>wa :1,9000bwipeout<cr>
 
 " bindings
 map <Leader>' :b#<CR>
@@ -114,6 +111,12 @@ nnoremap <Up> gk
 " sudo write this
 cmap W! w !sudo tee % >/dev/null
 
+" Fugitive
+noremap <Leader>gs <ESC>:Gstatus<CR>
+
+" Windows
+noremap <Leader>wc <C-W>c
+
 "Markdown to HTML  
 nmap <Leader>md :%!/usr/local/bin/Markdown.pl --html4tags <CR>
 
@@ -132,25 +135,22 @@ noremap <silent> <Leader>tt :call Toggle_task_status()<CR>
 
 " php folding with PHPDoc support
 let g:DisableAutoPHPFolding = 1
-map <F6> <Esc>:EnableFastPHPFolds<CR>
 
 " taglist
 map <F8> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 
 " Edit another file in the same directory as the current file
-map <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
-map <Leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
-map <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
+cnoremap %% <C-R>=expand('%:p:h')<CR>
+map <Leader>e :e %%/
+map <Leader>s :split %%/
+map <Leader>v :vnew %%/
+nmap <silent> <Leader>cd :lcd %%<CR>
+nmap <silent> <Leader>md :!mkdir -p %%<CR>
 
 " Fugitive
 map <Leader>gc :Gcommit<CR>
 map <Leader>gs :Gstatus<CR>
-
-" pdv - PHPDocumenter
-imap <Leader>d <ESC>:call PhpDocSingle()<CR>i 
-nmap <Leader>d :call PhpDocSingle()<CR> 
-vmap <Leader>d :call PhpDocRange()<CR> 
 
 " CtrlP
 let g:ctrlp_root_markers = ['.root-dir']
@@ -158,7 +158,7 @@ let g:ctrlp_working_path_mode = 2
 map <C-B> :CtrlPBuffer<CR>
 
 " Syntastic
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes' : ['php'] }
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes' : ['javascript', 'php'] }
 let g:syntastic_auto_jump = 1
 let g:syntastic_auto_loc_list = 1
 let s:php_executable = 'php'
@@ -175,42 +175,6 @@ let g:solarized_contrast="high"
 let g:solarized_visibility="high"
 colorscheme solarized
 
-" Text Manipulation
-function! HtmlEscape()
-	silent s/&/\&amp;/eg
-	silent s/</\&lt;/eg
-	silent s/>/\&gt;/eg
-	silent s/“/\&ldquo;/eg
-	silent s/”/\&rdquo;/eg
-	silent s/™/\&trade;/eg
-	silent s/®/\&reg;/eg
-	silent s/©/\&copy;/eg
-	silent s/‘/\&lsquo;/eg
-	silent s/’/\&rsquo;/eg
-	silent s/–/\&ndash;/eg
-	silent s/—/\&mdash;/eg
-endfunction
-
-function! HtmlUnEscape()
-	silent s/&amp;/\&/eg
-	silent s/&lt;/</eg
-	silent s/&gt;/>/eg
-	silent s/&ldquo;/“/eg
-	silent s/&rdquo;/”/eg
-	silent s/&trade;/™/eg
-	silent s/&reg;/®/eg
-	silent s/&copy;/©/eg
-	silent s/&lsquo;/‘/eg
-	silent s/&rsquo;/’/eg
-	silent s/&ndash;/–/eg
-	silent s/&mdash;/—/eg
-endfunction
-
-nnoremap <silent> <Leader>h :call HtmlEscape()<CR>
-nnoremap <silent> <Leader>H :call HtmlUnEscape()<CR>
-vnoremap <silent> <Leader>h :call HtmlEscape()<CR>
-vnoremap <silent> <Leader>H :call HtmlUnEscape()<CR>
-
 " Autocompletion 
 set completeopt=menuone,preview,longest
 let g:SuperTabDefaultCompletionType = 'context'
@@ -224,8 +188,6 @@ function! VimEnterHandler()
 		:CtrlPMRU
 	endif
 endfunction
-
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
 " dont auto insert comments
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
