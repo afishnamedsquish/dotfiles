@@ -85,3 +85,6 @@
 [submodule "vim/bundle/vim-movar"]
 	path = vim/bundle/vim-movar
 	url = https://github.com/robmiller/vim-movar.git
+[submodule "vim/bundle/TextObjectify"]
+	path = vim/bundle/TextObjectify
+	url = git://github.com/paradigm/TextObjectify.git
