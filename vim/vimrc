@@ -99,7 +99,7 @@ nnoremap ` '
 map <Leader>sw <ESC>:set wrap!<CR>
 
 " shell commands
-map <Leader>rc <ESC>^y$:new<CR>:0r!<C-R>"<CR>
+map <Leader>rc <ESC>^y$:r!<C-R>"<CR>
 
 " list whitespace
 map <Leader>sl :set list!<CR>
@@ -193,7 +193,7 @@ function! VimEnterHandler()
 endfunction
 
 " dont auto insert comments
-sutocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " VimWiki
 set g:vimwiki_list = [{'path': $HOME.'/Dropbox/vimwiki/', 'path_html': $HOME.'/Dropbox/vimwiki/html/'}]
