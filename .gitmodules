@@ -88,3 +88,6 @@
 [submodule "vim/bundle/TextObjectify"]
 	path = vim/bundle/TextObjectify
 	url = git://github.com/paradigm/TextObjectify.git
+[submodule "vim/bundle/vdebug"]
+	path = vim/bundle/vdebug
+	url = git://github.com/joonty/vdebug.git
