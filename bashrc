@@ -333,6 +333,7 @@ alias ls='ls --color=auto'
 alias tmux="TERM=screen-256color-bce tmux"
 
 # Git
+alias g='git'
 alias gs='git status'
 alias ga='git add'
 alias gl='git log'
