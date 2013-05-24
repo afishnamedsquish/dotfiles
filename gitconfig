@@ -1,0 +1,15 @@
+[user]
+	name = Ben Glassman
+	email = ben@vtdesignworks.com
+[alias]
+	s = status
+	co = checkout
+	fom = fetch origin master
+	pod = push origin dev
+	pom = push origin master
+	fod = fetch origin dev
+	df = diff --stat FETCH_HEAD
+	dff = diff FETCH_HEAD
+	mf = merge FETCH_HEAD
+	m = merge -no-ff
+	b = branch
