@@ -333,19 +333,7 @@ alias ls='ls --color=auto'
 alias tmux="TERM=screen-256color-bce tmux"
 
 # Git
-alias gs='git status'
-alias ga='git add'
-alias gl='git log'
-alias gc='git commit'
-alias gcm='git commit -m'
-alias gd='git diff --stat'
-alias gdf='git diff --stat FETCH_HEAD'
-alias gdff='git diff FETCH_HEAD'
-alias glf='git log FETCH_HEAD'
-alias gmf='git merge FETCH_HEAD'
-alias gfo='git fetch origin'
-alias gfom='git fetch origin master'
-alias gpo='git push origin'
+alias g='git'
 
 # Add to python path
 export PYTHONPATH=$PYTHONPATH:$HOME/dotfiles/python
@@ -356,3 +344,4 @@ export LESS=-RFX
 
 VISUAL=vim; export VISUAL
 EDITOR=vim; export EDITOR
+alias cds="cd ~/sites/swim"
