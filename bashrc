@@ -321,7 +321,6 @@ white='\e[0;37m' # White
 #export PS1="\n\[\033[1;36m\]\u\[\033[1;37m\] \[\033[0;36m\]`date`\n\[\033[0m\][\[\033[1;33m\]\w\[\033[0m\]]\[$yellow\]\$(__git_ps1)\[$white\]\$ "
 export PS1="\n\[\033[1;36m\]\u\[\033[1;37m\] \[\033[0;36m\]`date`\n\[\033[0m\][\[\033[1;33m\]\w\[\033[0m\]]\[$white\] "
 
-alias cdv="cd ~/sites/vtfa"
 alias cd=cd_
 alias ll='ls -alF'
 alias la='ls -A'
@@ -344,4 +343,6 @@ export LESS=-RFX
 
 VISUAL=vim; export VISUAL
 EDITOR=vim; export EDITOR
+
+alias cdv="cd ~/sites/vtfa"
 alias cds="cd ~/sites/swim"
