@@ -88,6 +88,15 @@
 [submodule "vim/bundle/TextObjectify"]
 	path = vim/bundle/TextObjectify
 	url = git://github.com/paradigm/TextObjectify.git
+[submodule "vim/bundle/vim-unite"]
+	path = vim/bundle/vim-unite
+	url = https://github.com/Shougo/unite.vim.git
+[submodule "vim/bundle/vim-javascript"]
+	path = vim/bundle/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git
+[submodule "vim/bundle/scss-syntax.vim"]
+	path = vim/bundle/scss-syntax.vim
+	url = https://github.com/cakebaker/scss-syntax.vim.git
 [submodule "vim/bundle/vdebug"]
 	path = vim/bundle/vdebug
 	url = git://github.com/joonty/vdebug.git

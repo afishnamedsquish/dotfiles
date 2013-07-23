@@ -346,3 +346,4 @@ EDITOR=vim; export EDITOR
 
 alias cdv="cd ~/sites/vtfa"
 alias cds="cd ~/sites/swim"
+alias localbstack='java -jar /usr/local/bin/BrowserStackTunnel.jar -f 6UEnhpWM9sCCUiG3pnGx '
