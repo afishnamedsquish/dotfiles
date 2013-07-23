@@ -333,6 +333,7 @@ alias ls='ls --color=auto'
 alias tmux="TERM=screen-256color-bce tmux"
 
 # Git
+alias g='git'
 alias gs='git status'
 alias ga='git add'
 alias gl='git log'
@@ -356,3 +357,4 @@ export LESS=-RFX
 
 VISUAL=vim; export VISUAL
 EDITOR=vim; export EDITOR
+alias localbstack='java -jar /usr/local/bin/BrowserStackTunnel.jar -f 6UEnhpWM9sCCUiG3pnGx '
