@@ -348,6 +348,9 @@ alias gfo='git fetch origin'
 alias gfom='git fetch origin master'
 alias gpo='git push origin'
 
+# Selenium
+alias sel="java -jar /usr/local/bin/selenium-server-standalone-2.31.0.jar"
+
 # Add to python path
 export PYTHONPATH=$PYTHONPATH:$HOME/dotfiles/python
 
@@ -357,3 +360,5 @@ export LESS=-RFX
 
 VISUAL=vim; export VISUAL
 EDITOR=vim; export EDITOR
+alias unmute="pactl set-sink-mute 0 0"
+alias mute="pactl set-sink-mute 0 1"
