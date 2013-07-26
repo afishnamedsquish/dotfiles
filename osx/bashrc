@@ -208,3 +208,4 @@ function csd
 } 
 
 alias cd=cd_
+alias localbstack='java -jar /usr/local/bin/BrowserStackTunnel.jar -f 6UEnhpWM9sCCUiG3pnGx '
