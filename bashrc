@@ -321,7 +321,6 @@ white='\e[0;37m' # White
 #export PS1="\n\[\033[1;36m\]\u\[\033[1;37m\] \[\033[0;36m\]`date`\n\[\033[0m\][\[\033[1;33m\]\w\[\033[0m\]]\[$yellow\]\$(__git_ps1)\[$white\]\$ "
 export PS1="\n\[\033[1;36m\]\u\[\033[1;37m\] \[\033[0;36m\]`date`\n\[\033[0m\][\[\033[1;33m\]\w\[\033[0m\]]\[$white\] "
 
-alias cdv="cd ~/sites/vtfa"
 alias cd=cd_
 alias ll='ls -alF'
 alias la='ls -A'
@@ -331,22 +330,17 @@ alias o="xdg-open"
 alias r="rsync -rltD --progress --exclude='*.swp' --exclude='*.bak'"
 alias ls='ls --color=auto'
 alias tmux="TERM=screen-256color-bce tmux"
+alias unmute="pactl set-sink-mute 0 0"
+alias mute="pactl set-sink-mute 0 1"
+alias cdv="cd ~/sites/vtfa"
+alias cds="cd ~/sites/swim"
+alias localbstack='java -jar /usr/local/bin/BrowserStackTunnel.jar -f 6UEnhpWM9sCCUiG3pnGx '
 
 # Git
 alias g='git'
-alias gs='git status'
-alias ga='git add'
-alias gl='git log'
-alias gc='git commit'
-alias gcm='git commit -m'
-alias gd='git diff --stat'
-alias gdf='git diff --stat FETCH_HEAD'
-alias gdff='git diff FETCH_HEAD'
-alias glf='git log FETCH_HEAD'
-alias gmf='git merge FETCH_HEAD'
-alias gfo='git fetch origin'
-alias gfom='git fetch origin master'
-alias gpo='git push origin'
+
+# Selenium
+alias sel="java -jar /usr/local/bin/selenium-server-standalone-2.31.0.jar"
 
 # Add to python path
 export PYTHONPATH=$PYTHONPATH:$HOME/dotfiles/python

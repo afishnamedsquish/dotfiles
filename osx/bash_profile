@@ -233,7 +233,7 @@ alias ll='ls -l'
 alias ls='ls -G'
 alias la='ls -la'
 
-alias r='rsync -rltDvz --progress --exclude="*.swp" --exclude="*.bak"'
+alias r='rsync -av --progress --exclude="*.swp" --exclude="*.bak"'
 
 alias cs='cd ~/client_sites'
 alias c='cd ~/clients'
@@ -242,6 +242,7 @@ alias ics='cd ~/ics'
 alias gvim='mvim'
 alias v='mvim'
 
+alias g='git'
 alias gds='git diff --staged'
 alias gs='git status'
 alias ga='git add'
@@ -274,3 +275,6 @@ export PYTHONPATH=$PYTHONPATH:$HOME/dotfiles/python
 
 #PS1='\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
 PS1='\[\033[34m\]\w\[\033[31m\]\$\[\033[00m\] '
+
+export PATH=$PATH:~/.gem/ruby/1.8/bin
+export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
