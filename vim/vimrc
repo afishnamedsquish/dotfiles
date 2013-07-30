@@ -230,6 +230,7 @@ function! QFDo(command)
         " Save if necessary
         update
     endfor
+endfunction
 
 " Unite
 let g:unite_source_history_yank_enable = 1
