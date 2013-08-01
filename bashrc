@@ -330,9 +330,17 @@ alias o="xdg-open"
 alias r="rsync -rltD --progress --exclude='*.swp' --exclude='*.bak'"
 alias ls='ls --color=auto'
 alias tmux="TERM=screen-256color-bce tmux"
+alias unmute="pactl set-sink-mute 0 0"
+alias mute="pactl set-sink-mute 0 1"
+alias cdv="cd ~/sites/vtfa"
+alias cds="cd ~/sites/swim"
+alias localbstack='java -jar /usr/local/bin/BrowserStackTunnel.jar -f 6UEnhpWM9sCCUiG3pnGx '
 
 # Git
 alias g='git'
+
+# Selenium
+alias sel="java -jar /usr/local/bin/selenium-server-standalone-2.31.0.jar"
 
 # Add to python path
 export PYTHONPATH=$PYTHONPATH:$HOME/dotfiles/python
@@ -343,7 +351,3 @@ export LESS=-RFX
 
 VISUAL=vim; export VISUAL
 EDITOR=vim; export EDITOR
-
-alias cdv="cd ~/sites/vtfa"
-alias cds="cd ~/sites/swim"
-alias localbstack='java -jar /usr/local/bin/BrowserStackTunnel.jar -f 6UEnhpWM9sCCUiG3pnGx '
