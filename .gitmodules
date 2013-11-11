@@ -100,3 +100,6 @@
 [submodule "vim/bundle/vdebug"]
 	path = vim/bundle/vdebug
 	url = git://github.com/joonty/vdebug.git
+[submodule "vim/bundle/unite-tag"]
+	path = vim/bundle/unite-tag
+	url = https://github.com/tsukkee/unite-tag.git
