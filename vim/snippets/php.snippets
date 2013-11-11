@@ -16,3 +16,7 @@ snippet vdwipil
 	<?php if ($_SERVER['REMOTE_ADDR'] === '75.149.135.98'): ?>
 		<?php ${1}; ?>
 	<?php endif; ?>
+snippet ecm
+	echo sprintf('%s(%s)', __METHOD__, ${1}) . PHP_EOL;
+snippet eol
+	PHP_EOL
