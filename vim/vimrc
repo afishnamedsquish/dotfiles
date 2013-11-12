@@ -243,6 +243,7 @@ call unite#custom#source('file_rec/async,file_rec,file_mru', 'converters', ['con
 nnoremap <C-P> :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec:!<cr>
 nnoremap <C-F> :<C-u>Unite -no-split -buffer-name=files   -start-insert file<cr>
 nnoremap <leader>ur :<C-u>Unite -no-split -buffer-name=mru     -start-insert file_mru<cr>
+nnoremap <C-T> :<C-u>Unite -no-split -buffer-name=tags   -start-insert tag<cr>
 " nnoremap <leader>uo :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
 nnoremap <C-Y> :<C-u>Unite -no-split -buffer-name=yank    history/yank<cr>
 nnoremap <C-B> :<C-u>Unite -no-split -buffer-name=buffer  -start-insert buffer<cr>
