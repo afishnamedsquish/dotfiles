@@ -16,6 +16,7 @@ alias tmux="TERM=screen-256color-bce tmux"
 alias r="rsync -rltD --progress --exclude='*.swp' --exclude='*.bak'"
 alias o="xdg-open"
 alias g="git"
+alias vi="vim"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
