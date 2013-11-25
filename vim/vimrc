@@ -1,9 +1,10 @@
-let g:pathogen_disabled = ['xptemplate', 'vim-space', 'ctrlp.vim']
+let g:pathogen_disabled = ['xptemplate', 'vim-space', 'ctrlp.vim', 'supertab']
 call pathogen#infect()
 call pathogen#helptags()
 
 set mouse=a
 syntax enable
+set backspace=2
 set pastetoggle=<F3>
 set t_Co=256
 set number
@@ -182,10 +183,10 @@ let g:solarized_visibility="high"
 colorscheme solarized
 
 " Autocompletion 
-set completeopt=menuone,preview,longest
-let g:SuperTabDefaultCompletionType = 'context'
-let g:SuperTabClosePreviewOnPopupClose = 1
-let g:SuperTabLongestHighlight = 1
+" set completeopt=menuone,preview,longest
+" let g:SuperTabDefaultCompletionType = 'context'
+" let g:SuperTabClosePreviewOnPopupClose = 1
+" let g:SuperTabLongestHighlight = 1
 
 " if there were no arguments passed, open ctrlpmru
 autocmd VimEnter * call VimEnterHandler()
