@@ -17,6 +17,13 @@ alias r="rsync -rltD --progress --exclude='*.swp' --exclude='*.bak'"
 alias o="xdg-open"
 alias g="git"
 
+# projects
+alias vtfa="cd ~/sites/vtfa"
+alias swim="cd ~/sites/swim"
+alias cw="cd ~/sites/contentworks"
+alias spark="cd ~/sites/sparkles"
+alias velco="cd ~/sites/velco"
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
