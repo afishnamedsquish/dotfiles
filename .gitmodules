@@ -100,3 +100,6 @@
 [submodule "vim/bundle/unite-tag"]
 	path = vim/bundle/unite-tag
 	url = https://github.com/tsukkee/unite-tag.git
+[submodule "vim/bundle/ack-vim"]
+	path = vim/bundle/ack-vim
+	url = https://github.com/mileszs/ack.vim.git
