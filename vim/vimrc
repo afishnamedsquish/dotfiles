@@ -66,7 +66,7 @@ nmap <silent> <Leader>wa :1,9000bwipeout<cr>
 
 " bindings
 map <Leader>' :b#<CR>
-map <C-C> "+y
+" map <C-C> "+y
 map <Leader>M :%s/<C-V><C-M>//g<CR>
 map <Leader>ff :let @+=expand('%:t')<CR>:echo expand('%:t')<CR>
 map <Leader>fr :let @+=expand('%')<CR>:echo expand('%')<CR>
@@ -252,3 +252,7 @@ function! s:unite_settings()
   imap <buffer> <C-j>   <Plug>(unite_select_next_line)
   imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
 endfunction
+
+nmap <C-M> gg"ryG;call Send_to_Tmux(@r)<CR>
+vmap <C-M> "ry;call Send_to_Tmux(@r)<CR>
+
