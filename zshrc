@@ -20,6 +20,14 @@ alias o="xdg-open"
 alias g="git"
 alias vi="vim"
 
+# projects
+alias vtfa="cd ~/sites/vtfa"
+alias swim="cd ~/sites/swim"
+alias cw="cd ~/sites/contentworks"
+alias spark="cd ~/sites/sparkles"
+alias velco="cd ~/sites/velco"
+alias smash="cd ~/sites/smash"
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
