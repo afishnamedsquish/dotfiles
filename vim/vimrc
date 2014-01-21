@@ -66,7 +66,7 @@ nmap <silent> <Leader>wa :1,9000bwipeout<cr>
 
 " bindings
 map <Leader>' :b#<CR>
-map <C-C> "+y
+" map <C-C> "+y
 map <Leader>M :%s/<C-V><C-M>//g<CR>
 map <Leader>ff :let @+=expand('%:t')<CR>:echo expand('%:t')<CR>
 map <Leader>fr :let @+=expand('%')<CR>:echo expand('%')<CR>
@@ -188,14 +188,6 @@ colorscheme solarized
 " let g:SuperTabClosePreviewOnPopupClose = 1
 " let g:SuperTabLongestHighlight = 1
 
-" if there were no arguments passed, open ctrlpmru
-autocmd VimEnter * call VimEnterHandler()
-function! VimEnterHandler()
-	if empty(argv()) && bufnr('$') == 1
-		:Unite -no-split -buffer-name=files   -start-insert file_rec:!
-	endif
-endfunction
-
 " VimWiki
 let g:vimwiki_list = [{'path': $HOME.'/Dropbox/vimwiki/', 'path_html': $HOME.'/Dropbox/vimwiki/html/'}]
 
@@ -260,3 +252,7 @@ function! s:unite_settings()
   imap <buffer> <C-j>   <Plug>(unite_select_next_line)
   imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
 endfunction
+
+nmap <C-M> vip"ryG;call Send_to_Tmux(@r)<CR>
+vmap <C-M> "ry;call Send_to_Tmux(@r)<CR>
+
