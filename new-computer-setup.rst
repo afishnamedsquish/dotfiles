@@ -3,7 +3,7 @@ New Linux Setup
 
 * Install applications
 
-	sudo apt-get install chromium-browser xclip git curl zsh ack-grep tmux
+	sudo apt-get install chromium-browser xclip git curl zsh ack-grep tmux task
     sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep 
 
 * Git identity
@@ -67,3 +67,5 @@ New Linux Setup
     sudo dpkg --add-architecture i386
     sudo add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -sc) partner"
     sudo apt-get update && sudo apt-get install skype
+
+* Install dropbox, at some point use owncloud
