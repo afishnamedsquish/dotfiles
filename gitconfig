@@ -1,6 +1,8 @@
 [user]
 	name = Ben Glassman
 	email = ben@vtdesignworks.com
+[color]
+    ui = always    
 [alias]
 	s = status
 	co = checkout
