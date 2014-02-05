@@ -3,7 +3,7 @@ New Linux Setup
 
 * Install applications
 
-	sudo apt-get install chromium-browser xclip git curl zsh ack-grep
+	sudo apt-get install chromium-browser xclip git curl zsh ack-grep tmux
     sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep 
 
 * Git identity
@@ -30,3 +30,19 @@ New Linux Setup
 	sh dotfiles/install.sh
 	chsh -s /bin/zsh $USER
 
+* Set solarized as color scheme
+
+    https://gist.github.com/gmodarelli/5942850
+
+* Set caps lock to control
+
+    sudoedit /etc/default/keyboard
+
+        edit the line with XKBOPTONS to include ctrl:nocaps (options separated by comma)
+        XKBOPTIONS="ctrl:nocaps"
+
+    sudo dpkg-reconfigure keyboard-configuration
+
+* Install xmonad with xmobar and launcher
+
+    sudo apt-get install gnome-panel xmonad xmobar suckless-tools
