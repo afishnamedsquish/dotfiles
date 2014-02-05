@@ -43,6 +43,12 @@ New Linux Setup
 
     sudo dpkg-reconfigure keyboard-configuration
 
+    The above only seems to work if you are using gnome, so once I started using xmonad it doesnt work and I created
+        ~/.xinitrc
+    and added
+        # Remap caps lock
+        xmodmap ~/.Xmodmap
+
 * Install xmonad with xmobar and launcher
 
     sudo apt-get install gnome-panel xmonad xmobar suckless-tools
