@@ -6,6 +6,11 @@ New Linux Setup
 	sudo apt-get install chromium-browser xclip git curl zsh ack-grep
     sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep 
 
+* Git identity
+
+    git config --global user.email ben@vtdesignworks.com
+    git config --global user.name Ben Glassman
+
 * Generate ssh key
 
 	mkdir ~/.ssh
