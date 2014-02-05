@@ -52,3 +52,18 @@ New Linux Setup
 * Install xmonad with xmobar and launcher
 
     sudo apt-get install gnome-panel xmonad xmobar suckless-tools
+
+* Install php/composer
+
+    # php5
+    sudo add-apt-repository ppa:ondrej/php5
+    sudo apt-get update && sudo apt-get install php5 php5-{cli,dev,mysql,sqlite,json,intl,imagick,gd,curl,xdebug}
+
+    # composer
+    cd ~ && curl -sS https://getcomposer.org/installer | php && chmod u+x ~/composer.phar && sudo mv ~/composer.phar /usr/local/bin/composer
+
+* Install skype
+
+    sudo dpkg --add-architecture i386
+    sudo add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -sc) partner"
+    sudo apt-get update && sudo apt-get install skype
