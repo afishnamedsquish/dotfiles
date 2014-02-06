@@ -13,3 +13,5 @@
 	mf = merge FETCH_HEAD
 	m = merge -no-ff
 	b = branch
+[color]
+	ui = true
