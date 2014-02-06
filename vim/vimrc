@@ -99,14 +99,19 @@ map <Leader>w] <ESC>:wn<CR>
 nnoremap ' `
 nnoremap ` '
 
-" wrap
-map <Leader>sw <ESC>:set wrap!<CR>
-
 " shell commands
-map <Leader>rc <ESC>^y$:r!<C-R>"<CR>
+nmap shh q:ir!
+nmap shv :vnew<CR>q:ir!
+nmap shy :call ShellYank()<CR>
+
+function! ShellYank()
+    call inputsave()
+    let command = input('Enter a shell command: ')
+    let @+ = system(command)
+    call inputrestore()
+endfunction
 
 " list whitespace
-map <Leader>sl :set list!<CR>
 set listchars=tab:▸\ ,eol:¬,trail:¤
 
 " make up/down go to next row in editor instead of next line
@@ -118,15 +123,6 @@ nnoremap <Up> gk
 " sudo write this
 cmap W! w !sudo tee % >/dev/null
 
-" Fugitive
-noremap <Leader>gs <ESC>:Gstatus<CR>
-
-" Windows
-noremap <Leader>wc <C-W>c
-
-"Markdown to HTML  
-nmap <Leader>md :%!/usr/local/bin/Markdown.pl --html4tags <CR>
-
 " Nerd Tree
 map <F2> :NERDTreeToggle<CR>
 let g:NERDTreeWinSize = 25
@@ -135,10 +131,6 @@ let g:NERDTreeWinSize = 25
 let NERDCreateDefaultMappings = 0
 nmap <Leader>c <Plug>NERDCommenterToggle
 vmap <Leader>c <Plug>NERDCommenterToggle 
-
-" Vim-Task
-inoremap <silent> <Leader>tt <ESC>:call Toggle_task_status()<CR>i
-noremap <silent> <Leader>tt :call Toggle_task_status()<CR>
 
 " php folding with PHPDoc support
 let g:DisableAutoPHPFolding = 1
@@ -152,12 +144,13 @@ cnoremap %% <C-R>=expand('%:p:h')<CR>
 map <Leader>e :e %%/
 map <Leader>s :split %%/
 map <Leader>v :vnew %%/
-nmap <silent> <Leader>cd :lcd %%<CR>
-nmap <silent> <Leader>md :!mkdir -p %%<CR>
+nmap <silent> cd :lcd %%<CR>
+nmap <silent> md :!mkdir -p %%<CR>
 
 " Fugitive
-map <Leader>gc :Gcommit<CR>
-map <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gs <ESC>:Gstatus<CR>
+nnoremap <Leader>gc :Gcommit<CR>
+nnoremap <Leader>gs :Gstatus<CR>
 
 " CtrlP
 let g:ctrlp_root_markers = ['.root-dir']
@@ -183,7 +176,7 @@ let g:solarized_visibility="high"
 colorscheme solarized
 
 " Autocompletion 
-" set completeopt=menuone,preview,longest
+set completeopt=menu,preview,longest
 " let g:SuperTabDefaultCompletionType = 'context'
 " let g:SuperTabClosePreviewOnPopupClose = 1
 " let g:SuperTabLongestHighlight = 1
@@ -253,6 +246,5 @@ function! s:unite_settings()
   imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
 endfunction
 
-nmap <C-M> vip"ryG;call Send_to_Tmux(@r)<CR>
-vmap <C-M> "ry;call Send_to_Tmux(@r)<CR>
-
+" nmap <C-M> vip"ryG;call Send_to_Tmux(@r)<CR>
+" vmap <C-M> "ry;call Send_to_Tmux(@r)<CR>
