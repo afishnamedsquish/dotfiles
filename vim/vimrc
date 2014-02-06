@@ -158,7 +158,7 @@ let g:ctrlp_working_path_mode = 2
 let g:ctrlp_user_command = 'find %s -type f -not -path "*.git*" -not -path "*logs*" -not -path "*cache*"'
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:20'
 map <C-T> :CtrlPTag<CR>
-" map <C-B> :CtrlPBuffer<CR>
+map <C-B> :CtrlPBuffer<CR>
 
 " Syntastic
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes' : ['php'] }
@@ -241,7 +241,7 @@ nnoremap <leader>ur :<C-u>Unite -no-split -buffer-name=mru     -start-insert fil
 " nnoremap <C-T> :<C-u>Unite -no-split -buffer-name=tags   -start-insert tag<cr>
 " nnoremap <leader>uo :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
 nnoremap <C-Y> :<C-u>Unite -no-split history/yank<cr>
-nnoremap <C-B> :<C-u>Unite -no-split -start-insert buffer<cr>
+" nnoremap <C-B> :<C-u>Unite -no-split -start-insert buffer<cr>
 nnoremap <C-G> :<C-u>Unite -no-split -start-insert grep:.<CR>
 nnoremap <C-Q>b :<C-u>Unite -quick-match buffer<cr>
 nnoremap <C-K> :<C-u>Unite -no-split -buffer-name=bookmark  -start-insert bookmark<cr>
