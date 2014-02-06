@@ -27,6 +27,7 @@ alias spark="cd ~/sites/sparkles"
 alias velco="cd ~/sites/velco"
 alias smash="cd ~/sites/smash"
 alias bull="cd ~/sites/bull"
+alias vdw="cd ~/sites/vtdesign"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
