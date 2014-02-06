@@ -11,6 +11,8 @@ imap <Leader>d <ESC>:call PhpDocSingle()<CR>i
 nmap <Leader>d :call PhpDocSingle()<CR> 
 vmap <Leader>d :call PhpDocRange()<CR> 
 
+nmap <Leader>pvc yavoecho get_class(");
+
 " Folding
 "set foldlevelstart=1
 "EnableFastPHPFolds

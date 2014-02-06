@@ -17,6 +17,7 @@ alias r="rsync -rltD --progress --exclude='*.swp' --exclude='*.bak'"
 alias o="xdg-open"
 alias g="git"
 alias vi="vim"
+alias phps="psysh"
 
 # projects
 alias vtfa="cd ~/sites/vtfa"
