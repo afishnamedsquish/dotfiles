@@ -1,4 +1,4 @@
-let g:pathogen_disabled = ['xptemplate', 'vim-space', 'ctrlp.vim', 'supertab']
+let g:pathogen_disabled = ['xptemplate', 'vim-space', 'supertab']
 call pathogen#infect()
 call pathogen#helptags()
 
@@ -15,7 +15,7 @@ set scrolloff=3
 set cul
 set wildmenu
 set wildmode=list:longest
-set wildignore=.git,*.swp,*.jpg,*.png,*.gif,*app/cache/**,*app/logs/**
+set wildignore+=*/.git/*,*.swp,*.jpg,*.png,*.gif,*app/cache/**,*app/logs/**
 set visualbell
 set clipboard=unnamed
 set showcmd
@@ -155,7 +155,10 @@ nnoremap <Leader>gs :Gstatus<CR>
 " CtrlP
 let g:ctrlp_root_markers = ['.root-dir']
 let g:ctrlp_working_path_mode = 2
-map <C-B> :CtrlPBuffer<CR>
+let g:ctrlp_user_command = 'find %s -type f -not -path "*.git*" -not -path "*logs*" -not -path "*cache*"'
+let g:ctrlp_match_window = 'top,order:ttb,min:1,max:20'
+map <C-T> :CtrlPTag<CR>
+" map <C-B> :CtrlPBuffer<CR>
 
 " Syntastic
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes' : ['php'] }
@@ -232,10 +235,10 @@ call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#custom#source('file_rec', 'ignore_pattern', '\v(node_modules)|(cache)|(vendor)|(bin)|(work)')
 call unite#custom#source('buffer,file_rec/async,file_rec,file_mru', 'matchers', ['converter_tail', 'matcher_default'])
 call unite#custom#source('file_rec/async,file_rec,file_mru', 'converters', ['converter_file_directory'])
-nnoremap <C-P> :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec:!<cr>
+" nnoremap <C-P> :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec:!<cr>
 nnoremap <C-F> :<C-u>Unite -no-split -buffer-name=files   -start-insert file<cr>
 nnoremap <leader>ur :<C-u>Unite -no-split -buffer-name=mru     -start-insert file_mru<cr>
-nnoremap <C-T> :<C-u>Unite -no-split -buffer-name=tags   -start-insert tag<cr>
+" nnoremap <C-T> :<C-u>Unite -no-split -buffer-name=tags   -start-insert tag<cr>
 " nnoremap <leader>uo :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
 nnoremap <C-Y> :<C-u>Unite -no-split history/yank<cr>
 nnoremap <C-B> :<C-u>Unite -no-split -start-insert buffer<cr>
