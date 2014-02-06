@@ -66,6 +66,10 @@ export PATH=$PATH:/home/squizztoupe/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin
 # Add to python path
 export PYTHONPATH=$PYTHONPATH:$HOME/dotfiles/python
 
+export WORKON_HOME=~/.virtualenvs
+export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
+source /usr/local/bin/virtualenvwrapper_lazy.sh
+
 VISUAL=vim; export VISUAL
 EDITOR=vim; export EDITOR
 
