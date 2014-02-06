@@ -1,4 +1,4 @@
-let g:pathogen_disabled = ['xptemplate', 'vim-space', 'supertab']
+let g:pathogen_disabled = ['xptemplate', 'vim-space']
 call pathogen#infect()
 call pathogen#helptags()
 
@@ -179,10 +179,10 @@ let g:solarized_visibility="high"
 colorscheme solarized
 
 " Autocompletion 
-set completeopt=menu,preview,longest
+set completeopt=menuone,preview,longest
 " let g:SuperTabDefaultCompletionType = 'context'
-" let g:SuperTabClosePreviewOnPopupClose = 1
-" let g:SuperTabLongestHighlight = 1
+let g:SuperTabClosePreviewOnPopupClose = 1
+let g:SuperTabLongestHighlight = 1
 
 " VimWiki
 let g:vimwiki_list = [{'path': $HOME.'/Dropbox/vimwiki/', 'path_html': $HOME.'/Dropbox/vimwiki/html/'}]
