@@ -69,3 +69,9 @@ New Linux Setup
     sudo apt-get update && sudo apt-get install skype
 
 * Install dropbox, at some point use owncloud
+
+* Install pip, virtualenvwrapper
+
+  wget https://raw.github.com/pypa/pip/master/contrib/get-pip.py && python get-pip.py
+  sudo pip install virtualenvwrapper
+  mkdir ~/.virtualenvs
