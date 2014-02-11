@@ -106,3 +106,6 @@
 [submodule "vim/bundle/tslime"]
 	path = vim/bundle/tslime
 	url = https://github.com/jgdavey/tslime.vim.git
+[submodule "vim/bundle/vimproc"]
+	path = vim/bundle/vimproc
+	url = https://github.com/Shougo/vimproc.vim.git
