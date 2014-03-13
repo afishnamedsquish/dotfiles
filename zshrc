@@ -64,7 +64,7 @@ plugins=(git composer symfony2 web-search rand-quote battery jira new_jira)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$PATH:/home/squizztoupe/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+export PATH=$PATH:/home/squizztoupe/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/bin/adt-bundle/sdk/platform-tools:/usr/local/bin/adt-bundle/sdk/tools:/usr/local/bin/apache-ant/bin
 
 # Add to python path
 export PYTHONPATH=$PYTHONPATH:$HOME/dotfiles/python

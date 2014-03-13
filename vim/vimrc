@@ -8,6 +8,7 @@ set backspace=2
 set pastetoggle=<F3>
 set t_Co=256
 set number
+set relativenumber
 set nofoldenable
 set laststatus=2
 set autoread
