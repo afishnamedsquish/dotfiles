@@ -18,6 +18,7 @@ alias o="xdg-open"
 alias g="git"
 alias vi="vim"
 alias phps="psysh"
+alias copy="xclip -selection clipboard"
 
 # projects
 alias vtfa="cd ~/sites/vtfa"
