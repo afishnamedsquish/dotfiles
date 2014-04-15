@@ -18,6 +18,10 @@ alias o="xdg-open"
 alias g="git"
 alias vi="vim"
 alias phps="psysh"
+alias decrypt="openssl rsautl -decrypt -inkey ~/.ssh/id_rsa -in "
+function encrypt {
+    openssl rsautl -encrypt -inkey ~/.ssh/id_rsa -in $1 -out $2
+}
 
 # projects
 alias vtfa="cd ~/sites/vtfa"
