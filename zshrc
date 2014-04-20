@@ -36,6 +36,14 @@ alias smash="cd ~/sites/smash"
 alias bull="cd ~/sites/bull"
 alias vdw="cd ~/sites/vtdesign"
 
+# task warrior
+alias tt="task"
+alias ttn="task +next"
+alias ttv="task proj:vdw"
+alias ttc="task proj:champlain"
+alias ttp="task proj:personal"
+alias tta="task add"
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
