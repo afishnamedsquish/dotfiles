@@ -18,6 +18,8 @@ alias o="xdg-open"
 alias g="git"
 alias vi="vim"
 alias phps="psysh"
+alias CAPSOFF="python -c 'from ctypes import *; X11 = cdll.LoadLibrary(\"libX11.so.6\"); display = X11.XOpenDisplay(None); X11.XkbLockModifiers(display, c_uint(0x0100), c_uint(2), c_uint(0)); X11.XCloseDisplay(display)'"
+
 alias decrypt="openssl rsautl -decrypt -inkey ~/.ssh/id_rsa -in "
 function encrypt {
     openssl rsautl -encrypt -inkey ~/.ssh/id_rsa -in $1 -out $2
