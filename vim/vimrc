@@ -142,7 +142,7 @@ let g:tagbar_autofocus = 1
 
 " Edit another file in the same directory as the current file
 cnoremap %% <C-R>=expand('%:p:h')<CR>
-map <Leader>e :e %%/
+" map <Leader>e :e %%/
 map <Leader>s :split %%/
 map <Leader>v :vnew %%/
 nmap <silent> cd :lcd %%<CR>
@@ -159,7 +159,7 @@ let g:ctrlp_working_path_mode = 2
 let g:ctrlp_user_command = 'find %s -type f -not -path "*.git*" -not -path "*logs*" -not -path "*cache*"'
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:20'
 map <C-T> :CtrlPTag<CR>
-map <C-B> :CtrlPBuffer<CR>
+" map <C-B> :CtrlPBuffer<CR>
 
 " Syntastic
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes' : ['php'] }
@@ -237,7 +237,9 @@ call unite#custom#source('file_rec', 'ignore_pattern', '\v(node_modules)|(cache)
 call unite#custom#source('buffer,file_rec/async,file_rec,file_mru', 'matchers', ['converter_tail', 'matcher_default'])
 call unite#custom#source('file_rec/async,file_rec,file_mru', 'converters', ['converter_file_directory'])
 " nnoremap <C-P> :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec:!<cr>
-nnoremap <C-F> :<C-u>Unite -no-split -buffer-name=files   -start-insert file<cr>
+nnoremap <C-F> :<C-u>Unite -no-split -buffer-name=files   -start-insert -quick-match file<cr>
+nnoremap <C-H> :<C-u>Unite -no-split -buffer-name=files   -start-insert -quick-match file:<C-R>=expand('%:p:h')<cr><cr>
+nnoremap <C-B> :<C-u>Unite -no-split -buffer-name=buffers   -start-insert -quick-match buffer<cr>
 nnoremap <leader>ur :<C-u>Unite -no-split -buffer-name=mru     -start-insert file_mru<cr>
 " nnoremap <C-T> :<C-u>Unite -no-split -buffer-name=tags   -start-insert tag<cr>
 " nnoremap <leader>uo :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
