@@ -5,7 +5,8 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="candy-kingdom"
+ZSH_THEME="blinks"
+# ZSH_THEME="random"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -20,7 +21,6 @@ alias vi="vim"
 alias phps="psysh"
 alias copy="xclip -selection clipboard"
 alias CAPSOFF="python -c 'from ctypes import *; X11 = cdll.LoadLibrary(\"libX11.so.6\"); display = X11.XOpenDisplay(None); X11.XkbLockModifiers(display, c_uint(0x0100), c_uint(2), c_uint(0)); X11.XCloseDisplay(display)'"
-
 alias decrypt="openssl rsautl -decrypt -inkey ~/.ssh/id_rsa -in "
 function encrypt {
     openssl rsautl -encrypt -inkey ~/.ssh/id_rsa -in $1 -out $2
@@ -36,6 +36,11 @@ alias velco="cd ~/sites/velco"
 alias smash="cd ~/sites/smash"
 alias bull="cd ~/sites/bull"
 alias vdw="cd ~/sites/vtdesign"
+
+# symfony
+alias sfsch='app/console doctrine:schema:update --dump-sql'
+alias sfmig='app/console doctrine:migrations:mig'
+alias sfmigdiff='vim $(app/console doctrine:migrations:diff | cut -d"\"" -f2)'
 
 # task warrior
 alias tt="task"
@@ -85,7 +90,7 @@ export PATH=$PATH:/home/squizztoupe/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin
 export PYTHONPATH=$PYTHONPATH:$HOME/dotfiles/python
 
 export WORKON_HOME=~/.virtualenvs
-export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
+# export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
 
 VIRTUALENVWRAPPER=$(locate virtualenvwrapper_lazy.sh)
 if [ $VIRTUALENVWRAPPER ] 
