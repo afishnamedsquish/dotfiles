@@ -35,6 +35,11 @@ alias smash="cd ~/sites/smash"
 alias bull="cd ~/sites/bull"
 alias vdw="cd ~/sites/vtdesign"
 
+# symfony
+alias sfsch='app/console doctrine:schema:update --dump-sql'
+alias sfmig='app/console doctrine:migrations:mig'
+alias sfmigdiff='vim $(app/console doctrine:migrations:diff | cut -d"\"" -f2)'
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
