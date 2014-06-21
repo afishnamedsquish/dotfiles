@@ -351,3 +351,6 @@ export LESS=-RFX
 
 VISUAL=vim; export VISUAL
 EDITOR=vim; export EDITOR
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+source ~/.fzf.bash
