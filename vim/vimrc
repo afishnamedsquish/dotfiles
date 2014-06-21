@@ -237,9 +237,9 @@ call unite#custom#source('file_rec', 'ignore_pattern', '\v(node_modules)|(cache)
 call unite#custom#source('buffer,file_rec/async,file_rec,file_mru', 'matchers', ['converter_tail', 'matcher_default'])
 call unite#custom#source('file_rec/async,file_rec,file_mru', 'converters', ['converter_file_directory'])
 " nnoremap <C-P> :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec:!<cr>
-nnoremap <C-F> :<C-u>Unite -no-split -buffer-name=files   -start-insert -quick-match file<cr>
-nnoremap <C-H> :<C-u>Unite -no-split -buffer-name=files   -start-insert -quick-match file:<C-R>=expand('%:p:h')<cr><cr>
-nnoremap <C-B> :<C-u>Unite -no-split -buffer-name=buffers   -start-insert -quick-match buffer<cr>
+nnoremap <C-F> :<C-u>Unite -no-split -buffer-name=files   -start-insert file<cr>
+nnoremap <C-H> :<C-u>Unite -no-split -buffer-name=files   -start-insert file:<C-R>=expand('%:p:h')<cr><cr>
+nnoremap <C-B> :<C-u>Unite -no-split -buffer-name=buffers   -start-insert buffer<cr>
 nnoremap <leader>ur :<C-u>Unite -no-split -buffer-name=mru     -start-insert file_mru<cr>
 " nnoremap <C-T> :<C-u>Unite -no-split -buffer-name=tags   -start-insert tag<cr>
 " nnoremap <leader>uo :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
@@ -262,3 +262,5 @@ endfunction
 
 " nmap <C-M> vip"ryG;call Send_to_Tmux(@r)<CR>
 " vmap <C-M> "ry;call Send_to_Tmux(@r)<CR>
+
+au FileType ruby set kp=ri sw=2 ts=2 expandtab
