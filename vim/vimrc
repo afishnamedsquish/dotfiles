@@ -142,7 +142,7 @@ let g:tagbar_autofocus = 1
 
 " Edit another file in the same directory as the current file
 cnoremap %% <C-R>=expand('%:p:h')<CR>
-" map <Leader>e :e %%/
+map <Leader>ed :e %%/
 map <Leader>s :split %%/
 map <Leader>v :vnew %%/
 nmap <silent> cd :lcd %%<CR>
@@ -173,8 +173,10 @@ hi link EasyMotionShade Comment
 
 " Color Scheme
 set background=dark
-let g:solarized_termtrans=1
-let g:solarized_termcolors=256
+" let g:solarized_termtrans=1
+" let g:solarized_termcolors=256
+call togglebg#map("<F4>")
+let g:solarized_termcolors=16
 let g:solarized_contrast="high"
 let g:solarized_visibility="high"
 colorscheme solarized
@@ -259,6 +261,11 @@ function! s:unite_settings()
   imap <buffer> <C-j>   <Plug>(unite_select_next_line)
   imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
 endfunction
+
+" Search motion to end of search
+vnoremap <silent> S //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
+    \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
+omap S :normal vs<CR>
 
 " nmap <C-M> vip"ryG;call Send_to_Tmux(@r)<CR>
 " vmap <C-M> "ry;call Send_to_Tmux(@r)<CR>
