@@ -43,6 +43,9 @@ alias ttv="task proj:vdw"
 alias ttc="task proj:champlain"
 alias ttp="task proj:personal"
 alias tta="task add"
+function ttd {
+    task $1 done
+}
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -101,3 +104,6 @@ setopt autocd
 setopt extended_glob
 
 autoload -U zmv
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+source ~/.fzf.zsh
