@@ -21,6 +21,7 @@ set visualbell
 set clipboard=unnamed
 set showcmd
 set rtp+=~/.fzf
+set splitright
 
 " smoother plugins
 set lazyredraw
@@ -174,8 +175,10 @@ hi link EasyMotionShade Comment
 
 " Color Scheme
 set background=dark
-let g:solarized_termtrans=1
-let g:solarized_termcolors=256
+" let g:solarized_termtrans=1
+" let g:solarized_termcolors=256
+call togglebg#map("<F4>")
+let g:solarized_termcolors=16
 let g:solarized_contrast="high"
 let g:solarized_visibility="high"
 colorscheme solarized
