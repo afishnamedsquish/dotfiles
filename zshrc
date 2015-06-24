@@ -28,6 +28,7 @@ function encrypt {
 alias nmrestart="service network-manager restart"
 
 # projects
+alias vac="cd ~/sites/vac"
 alias vtfa="cd ~/sites/vtfa"
 alias swim="cd ~/sites/swim"
 alias cw="cd ~/sites/contentworks"
@@ -94,7 +95,7 @@ plugins=(git composer symfony2 web-search rand-quote battery)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$PATH:/home/squizztoupe/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/bin/adt-bundle/sdk/platform-tools:/usr/local/bin/adt-bundle/sdk/tools:/usr/local/bin/apache-ant/bin:~/.composer/vendor/bin
+export PATH=$PATH:/home/squizztoupe/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/bin/adt-bundle/sdk/platform-tools:/usr/local/bin/adt-bundle/sdk/tools:/usr/local/bin/apache-ant/bin:$HOME/.composer/bin
 
 # Add to python path
 export PYTHONPATH=$PYTHONPATH:$HOME/dotfiles/python
@@ -122,4 +123,6 @@ autoload -U zmv
 export PATH="/usr/local/heroku/bin:$PATH"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+export FZF_DEFAULT_COMMAND='ack -l --page=less --ignore-dir=wp-uploads --ignore-dir=cache --ignore-dir=bak --ignore-dir=backup -g ""'
 source ~/.fzf.zsh
