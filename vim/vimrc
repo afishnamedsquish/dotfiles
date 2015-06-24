@@ -21,6 +21,7 @@ set visualbell
 set clipboard=unnamed
 set showcmd
 set splitright
+set modeline
 
 " smoother plugins
 set lazyredraw
@@ -263,6 +264,8 @@ function! s:unite_settings()
   imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
 endfunction
 
+autocmd FileType aspx call s:unite_settings()
+
 " Search motion to end of search
 vnoremap <silent> S //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
     \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
@@ -270,3 +273,5 @@ omap S :normal vs<CR>
 
 " nmap <C-M> vip"ryG;call Send_to_Tmux(@r)<CR>
 " vmap <C-M> "ry;call Send_to_Tmux(@r)<CR>
+
+au BufRead,BufNewFile *.aspx,*.asmx,*.ascx set noexpandtab
