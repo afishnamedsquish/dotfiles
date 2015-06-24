@@ -1,4 +1,4 @@
-# Path to your oh-my-zsh configuration.
+# Path to your oh-my-zsh configuration.  
 ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
@@ -25,6 +25,7 @@ alias decrypt="openssl rsautl -decrypt -inkey ~/.ssh/id_rsa -in "
 function encrypt {
     openssl rsautl -encrypt -inkey ~/.ssh/id_rsa -in $1 -out $2
 }
+alias nmrestart="service network-manager restart"
 
 # projects
 alias vtfa="cd ~/sites/vtfa"
@@ -49,6 +50,15 @@ alias ttv="task proj:vdw"
 alias ttc="task proj:champlain"
 alias ttp="task proj:personal"
 alias tta="task add"
+function tte {
+    task $1 edit
+}
+function ttd {
+    task $1 done
+}
+function ttm {
+    task $1 modify $2
+}
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -79,12 +89,12 @@ DISABLE_CORRECTION="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git composer symfony2 web-search rand-quote battery jira new_jira)
+plugins=(git composer symfony2 web-search rand-quote battery)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$PATH:/home/squizztoupe/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/bin/adt-bundle/sdk/platform-tools:/usr/local/bin/adt-bundle/sdk/tools:/usr/local/bin/apache-ant/bin
+export PATH=$PATH:/home/squizztoupe/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/bin/adt-bundle/sdk/platform-tools:/usr/local/bin/adt-bundle/sdk/tools:/usr/local/bin/apache-ant/bin:~/.composer/vendor/bin
 
 # Add to python path
 export PYTHONPATH=$PYTHONPATH:$HOME/dotfiles/python
@@ -107,3 +117,9 @@ setopt autocd
 setopt extended_glob
 
 autoload -U zmv
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+source ~/.fzf.zsh
