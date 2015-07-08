@@ -20,6 +20,9 @@ set wildignore+=*/.git/*,*.swp,*.jpg,*.png,*.gif,*app/cache/**,*app/logs/**
 set visualbell
 set clipboard=unnamed
 set showcmd
+set rtp+=~/.fzf
+set splitright
+set modeline
 
 " smoother plugins
 set lazyredraw
@@ -262,6 +265,8 @@ function! s:unite_settings()
   imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
 endfunction
 
+autocmd FileType aspx call s:unite_settings()
+
 " Search motion to end of search
 vnoremap <silent> S //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
     \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
@@ -274,6 +279,7 @@ au FileType ruby set kp=ri sw=2 ts=2 expandtab
 au FileType lisp set sw=2 ts=2 sts=2 sta
 au FileType javascript set kp=ri sw=2 ts=2 expandtab
 au FileType php set keywordprg=phpd
+au BufRead,BufNewFile *.aspx,*.asmx,*.ascx set noexpandtab
 
 " Go
 au Filetype go nnoremap <leader>gr :GoRun %<CR>
