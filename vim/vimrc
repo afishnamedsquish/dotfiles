@@ -271,3 +271,10 @@ omap S :normal vs<CR>
 " vmap <C-M> "ry;call Send_to_Tmux(@r)<CR>
 
 au FileType ruby set kp=ri sw=2 ts=2 expandtab
+au FileType lisp set sw=2 ts=2 sts=2 sta
+au FileType javascript set kp=ri sw=2 ts=2 expandtab
+au FileType php set keywordprg=phpd
+
+" Go
+au Filetype go nnoremap <leader>gr :GoRun %<CR>
+let g:go_disable_autoinstall = 0
