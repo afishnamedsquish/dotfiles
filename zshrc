@@ -51,6 +51,9 @@ alias ttv="task proj:vdw"
 alias ttc="task proj:champlain"
 alias ttp="task proj:personal"
 alias tta="task add"
+function ttd {
+    task $1 done
+}
 function tte {
     task $1 edit
 }
@@ -121,6 +124,8 @@ setopt autocd
 setopt extended_glob
 
 autoload -U zmv
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
