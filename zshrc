@@ -103,10 +103,13 @@ export PYTHONPATH=$PYTHONPATH:$HOME/dotfiles/python
 export WORKON_HOME=~/.virtualenvs
 # export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
 
-VIRTUALENVWRAPPER=$(locate virtualenvwrapper_lazy.sh)
-if [ $VIRTUALENVWRAPPER ] 
-    then source $VIRTUALENVWRAPPER
-fi
+function venv() {
+    if [ -z $VIRTUALENVWRAPPER_PYTHON ] 
+    then
+        VIRTUALENVWRAPPER=$(locate virtualenvwrapper_lazy.sh)
+        source $VIRTUALENVWRAPPER
+    fi
+}
 
 VISUAL=vim; export VISUAL
 EDITOR=vim; export EDITOR
@@ -123,6 +126,3 @@ autoload -U zmv
 export PATH="/usr/local/heroku/bin:$PATH"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-export FZF_DEFAULT_COMMAND='ack -l --page=less --ignore-dir=wp-uploads --ignore-dir=cache --ignore-dir=bak --ignore-dir=backup -g ""'
-source ~/.fzf.zsh
