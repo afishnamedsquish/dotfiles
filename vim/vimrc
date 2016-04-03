@@ -108,8 +108,6 @@ set listchars=tab:▸\ ,eol:¬,trail:¤
 " make up/down go to next row in editor instead of next line
 nnoremap j gj
 nnoremap k gk
-nnoremap <Down> gj
-nnoremap <Up> gk
 
 " sudo write this
 cmap W! w !sudo tee % >/dev/null
