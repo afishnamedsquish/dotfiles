@@ -60,13 +60,6 @@ nnoremap ; :
 vnoremap ; :
 nnoremap <Space> ;
 
-" scrolling
-nnoremap <C-e> 3<C-e>
-nnoremap <C-y> 3<C-y>
-
-" Wipe out all buffers
-nmap <silent> <Leader>wa :1,9000bwipeout<cr>
-
 " bindings
 map <Leader>' :b#<CR>
 map <Leader>M :%s/<C-V><C-M>//g<CR>
