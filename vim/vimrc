@@ -62,11 +62,6 @@ nnoremap <Space> ;
 
 " bindings
 map <Leader>' :b#<CR>
-map <Leader>M :%s/<C-V><C-M>//g<CR>
-map <Leader>ff :let @+=expand('%:t')<CR>:echo expand('%:t')<CR>
-map <Leader>fr :let @+=expand('%')<CR>:echo expand('%')<CR>
-map <Leader>fp :let @+=expand('%:p')<CR>:echo expand('%:p')<CR>
-map <Leader>sc <ESC>:Scratch<CR>
 
 " unmap dangerous visual mode lowercase
 vmap u <Nop>
