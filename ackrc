@@ -3,3 +3,4 @@
 --type-set=json=.json
 --color
 --ignore-dir=cache
+--ignore-dir=node_modules
