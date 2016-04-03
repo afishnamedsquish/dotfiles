@@ -1,18 +1,9 @@
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
-[submodule "vim/bundle/ctrlp.vim"]
-	path = vim/bundle/ctrlp.vim
-	url = https://github.com/kien/ctrlp.vim.git
 [submodule "vim/bundle/sparkup"]
 	path = vim/bundle/sparkup
 	url = https://github.com/rstacruz/sparkup.git
-[submodule "vim/bundle/tagbar"]
-	path = vim/bundle/tagbar
-	url = https://github.com/majutsushi/tagbar.git
-[submodule "vim/bundle/vim-easymotion"]
-	path = vim/bundle/vim-easymotion
-	url = https://github.com/Lokaltog/vim-easymotion.git
 [submodule "vim/bundle/vim-surround"]
 	path = vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
@@ -22,9 +13,6 @@
 [submodule "vim/bundle/vim-colors-solarized"]
 	path = vim/bundle/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
-[submodule "vim/bundle/vim-snipmate"]
-	path = vim/bundle/vim-snipmate
-	url = git://github.com/garbas/vim-snipmate.git
 [submodule "vim/bundle/tlib_vim"]
 	path = vim/bundle/tlib_vim
 	url = https://github.com/tomtom/tlib_vim.git
@@ -58,9 +46,6 @@
 [submodule "vim/bundle/vim-twig"]
 	path = vim/bundle/vim-twig
 	url = git://github.com/beyondwords/vim-twig.git
-[submodule "vim/bundle/vim-less"]
-	path = vim/bundle/vim-less
-	url = git://github.com/groenewege/vim-less.git
 [submodule "vim/bundle/vim-visual-star-search"]
 	path = vim/bundle/vim-visual-star-search
 	url = git://github.com/nelstrom/vim-visual-star-search.git
@@ -79,12 +64,6 @@
 [submodule "vim/bundle/vim-repeat"]
 	path = vim/bundle/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
-[submodule "vim/bundle/vim-movar"]
-	path = vim/bundle/vim-movar
-	url = https://github.com/robmiller/vim-movar.git
-[submodule "vim/bundle/TextObjectify"]
-	path = vim/bundle/TextObjectify
-	url = git://github.com/paradigm/TextObjectify.git
 [submodule "vim/bundle/vim-unite"]
 	path = vim/bundle/vim-unite
 	url = https://github.com/Shougo/unite.vim.git
@@ -100,9 +79,6 @@
 [submodule "vim/bundle/ack-vim"]
 	path = vim/bundle/ack-vim
 	url = https://github.com/mileszs/ack.vim.git
-[submodule "vim/bundle/tslime"]
-	path = vim/bundle/tslime
-	url = https://github.com/jgdavey/tslime.vim.git
 [submodule "vim/bundle/vimproc"]
 	path = vim/bundle/vimproc
 	url = https://github.com/Shougo/vimproc.vim.git
