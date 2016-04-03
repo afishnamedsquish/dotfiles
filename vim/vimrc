@@ -72,6 +72,7 @@ nmap <silent> <Leader>sv :so ~/dotfiles/vim/vimrc<CR>
 nmap <silent> <Leader>ssh :e ~/.ssh/config<CR>
 nmap <silent> <Leader>bashp :e ~/.bash_profile<CR>
 nmap <silent> <Leader>bashr :e ~/.bashrc<CR>
+nmap <silent> <Leader>zshr :e ~/.zshrc<CR>
 
 " quickfix
 map <Leader>qq <ESC>:cw<CR>
