@@ -1,4 +1,3 @@
-let g:pathogen_disabled = ['xptemplate', 'vim-space']
 call pathogen#infect()
 call pathogen#helptags()
 
@@ -127,21 +126,8 @@ nnoremap <Up> gk
 " sudo write this
 cmap W! w !sudo tee % >/dev/null
 
-" Nerd Tree
-map <F2> :NERDTreeToggle<CR>
-let g:NERDTreeWinSize = 25
-
-" Nerd Commenter
-let NERDCreateDefaultMappings = 0
-nmap <Leader>c <Plug>NERDCommenterToggle
-vmap <Leader>c <Plug>NERDCommenterToggle 
-
 " php folding with PHPDoc support
 let g:DisableAutoPHPFolding = 1
-
-" taglist
-map <F8> :TagbarToggle<CR>
-let g:tagbar_autofocus = 1
 
 " Edit another file in the same directory as the current file
 cnoremap %% <C-R>=expand('%:p:h')<CR>
@@ -156,14 +142,6 @@ nnoremap <Leader>gs <ESC>:Gstatus<CR>
 nnoremap <Leader>gc :Gcommit<CR>
 nnoremap <Leader>gs :Gstatus<CR>
 
-" CtrlP
-let g:ctrlp_root_markers = ['.root-dir']
-let g:ctrlp_working_path_mode = 2
-let g:ctrlp_user_command = 'find %s -type f -not -path "*.git*" -not -path "*logs*" -not -path "*cache*"'
-let g:ctrlp_match_window = 'top,order:ttb,min:1,max:20'
-map <C-T> :CtrlPTag<CR>
-" map <C-B> :CtrlPBuffer<CR>
-
 " Syntastic
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes' : ['php'] }
 let g:syntastic_auto_jump = 1
@@ -175,10 +153,10 @@ hi link EasyMotionTarget ErrorMsg
 hi link EasyMotionShade Comment
 
 " Color Scheme
+set rtp+=~/.vim/bundle/vim-colors-solarized
 set background=dark
 " let g:solarized_termtrans=1
 " let g:solarized_termcolors=256
-call togglebg#map("<F4>")
 let g:solarized_termcolors=16
 let g:solarized_contrast="high"
 let g:solarized_visibility="high"
@@ -256,8 +234,8 @@ nnoremap <C-K> :<C-u>Unite -no-split -buffer-name=bookmark  -start-insert bookma
 nnoremap <C-K>a :<C-u>UniteBookmarkAdd<cr>
 
 " Custom mappings for the unite buffer
-autocmd FileType unite call s:unite_settings()
-function! s:unite_settings()
+autocmd FileType unite call s:unite_my_settings()
+function! s:unite_my_settings()
   " Play nice with supertab
   let b:SuperTabDisabled=1
   " Enable navigation with control-j and control-k in insert mode
@@ -265,15 +243,10 @@ function! s:unite_settings()
   imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
 endfunction
 
-autocmd FileType aspx call s:unite_settings()
-
 " Search motion to end of search
 vnoremap <silent> S //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
     \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
 omap S :normal vs<CR>
-
-" nmap <C-M> vip"ryG;call Send_to_Tmux(@r)<CR>
-" vmap <C-M> "ry;call Send_to_Tmux(@r)<CR>
 
 au FileType ruby setlocal kp=ri sw=2 ts=2 expandtab
 au FileType lisp setlocal sw=2 ts=2 sts=2 sta
@@ -281,6 +254,4 @@ au FileType javascript setlocal kp=ri sw=2 ts=2 expandtab
 au FileType php setlocal keywordprg=phpd
 au BufRead,BufNewFile *.aspx,*.asmx,*.ascx set noexpandtab
 
-" Go
-au Filetype go nnoremap <leader>gr :GoRun %<CR>
-let g:go_disable_autoinstall = 0
+set suffixesadd=.js,.php
