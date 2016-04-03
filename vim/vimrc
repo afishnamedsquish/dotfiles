@@ -148,10 +148,6 @@ let g:syntastic_auto_jump = 1
 let g:syntastic_auto_loc_list = 1
 let s:php_executable = 'php'
 
-" Easy Motion
-hi link EasyMotionTarget ErrorMsg
-hi link EasyMotionShade Comment
-
 " Color Scheme
 set rtp+=~/.vim/bundle/vim-colors-solarized
 set background=dark
