@@ -1,4 +1,5 @@
 call pathogen#infect()
+
 call pathogen#helptags()
 
 set mouse=a
@@ -138,8 +139,6 @@ nmap <silent> cd :lcd %%<CR>
 nmap <silent> md :!mkdir -p %%<CR>
 
 " Fugitive
-nnoremap <Leader>gs <ESC>:Gstatus<CR>
-nnoremap <Leader>gc :Gcommit<CR>
 nnoremap <Leader>gs :Gstatus<CR>
 
 " Syntastic
