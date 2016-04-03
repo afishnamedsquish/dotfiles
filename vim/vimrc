@@ -112,9 +112,6 @@ nnoremap k gk
 " sudo write this
 cmap W! w !sudo tee % >/dev/null
 
-" php folding with PHPDoc support
-let g:DisableAutoPHPFolding = 1
-
 " Edit another file in the same directory as the current file
 cnoremap %% <C-R>=expand('%:p:h')<CR>
 map <Leader>ed :e %%/
