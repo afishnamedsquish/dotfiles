@@ -91,18 +91,6 @@ map <Leader>w] <ESC>:wn<CR>
 nnoremap ' `
 nnoremap ` '
 
-" shell commands
-nmap shh q:ir!
-nmap shv :vnew<CR>q:ir!
-nmap shy :call ShellYank()<CR>
-
-function! ShellYank()
-    call inputsave()
-    let command = input('Enter a shell command: ')
-    let @+ = system(command)
-    call inputrestore()
-endfunction
-
 " list whitespace
 set listchars=tab:▸\ ,eol:¬,trail:¤
 
