@@ -20,7 +20,6 @@ set wildignore+=*/.git/*,*.swp,*.jpg,*.png,*.gif,*app/cache/**,*app/logs/**
 set visualbell
 set clipboard=unnamed
 set showcmd
-set rtp+=~/.fzf
 set splitright
 set modeline
 
