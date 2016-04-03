@@ -22,6 +22,7 @@ set clipboard=unnamed
 set showcmd
 set splitright
 set modeline
+set suffixesadd=.js,.php
 
 " smoother plugins
 set lazyredraw
@@ -145,12 +146,6 @@ let g:SuperTabLongestHighlight = 1
 " VimWiki
 let g:vimwiki_list = [{'path': $HOME.'/Dropbox/vimwiki/', 'path_html': $HOME.'/Dropbox/vimwiki/html/'}]
 
-" dont auto insert comments
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
-" js highlighting for json files
-autocmd BufNewFile,BufRead *.json set ft=javascript
-
 command! -nargs=+ QFDo call QFDo(<q-args>)
 
 " Function that does the work
@@ -196,6 +191,11 @@ nnoremap <C-Q>b :<C-u>Unite -quick-match buffer<cr>
 nnoremap <C-K> :<C-u>Unite -no-split -buffer-name=bookmark  -start-insert bookmark<cr>
 nnoremap <C-K>a :<C-u>UniteBookmarkAdd<cr>
 
+" Search motion to end of search
+vnoremap <silent> S //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
+    \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
+omap S :normal vs<CR>
+
 " Custom mappings for the unite buffer
 autocmd FileType unite call s:unite_my_settings()
 function! s:unite_my_settings()
@@ -206,15 +206,11 @@ function! s:unite_my_settings()
   imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
 endfunction
 
-" Search motion to end of search
-vnoremap <silent> S //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
-    \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
-omap S :normal vs<CR>
-
+" js highlighting for json files
 au FileType ruby setlocal kp=ri sw=2 ts=2 expandtab
 au FileType lisp setlocal sw=2 ts=2 sts=2 sta
 au FileType javascript setlocal kp=ri sw=2 ts=2 expandtab
 au FileType php setlocal keywordprg=phpd
 au BufRead,BufNewFile *.aspx,*.asmx,*.ascx set noexpandtab
-
-set suffixesadd=.js,.php
+au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+au BufNewFile,BufRead *.json set ft=javascript
