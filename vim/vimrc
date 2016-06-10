@@ -120,6 +120,7 @@ let s:php_executable = 'php'
 
 " Color Scheme
 set rtp+=~/.vim/bundle/vim-colors-solarized
+set rtp+=~/.fzf
 set background=dark
 let g:solarized_termcolors=16
 let g:solarized_contrast="high"
@@ -171,6 +172,7 @@ call unite#custom#source('file_rec', 'ignore_pattern', 'node_modules/\|app/cache
 call unite#custom#source('buffer,file_rec/async,file_rec,file_mru', 'matchers', ['converter_tail', 'matcher_default'])
 call unite#custom#source('file_rec/async,file_rec,file_mru', 'converters', ['converter_file_directory'])
 nnoremap <C-F> :<C-u>Unite -no-split -buffer-name=files   -start-insert file<cr>
+nnoremap <C-F> :<C-u>Unite -no-split -buffer-name=files -start-insert file_rec/neovim<cr>
 nnoremap <C-H> :<C-u>Unite -no-split -buffer-name=files   -start-insert file:<C-R>=expand('%:p:h')<cr><cr>
 nnoremap <C-B> :<C-u>Unite -no-split -buffer-name=buffers   -start-insert buffer<cr>
 nnoremap <leader>ur :<C-u>Unite -no-split -buffer-name=mru     -start-insert file_mru<cr>
@@ -203,3 +205,8 @@ au FileType php setlocal keywordprg=phpd
 au BufRead,BufNewFile *.aspx,*.asmx,*.ascx set noexpandtab
 au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 au BufNewFile,BufRead *.json set ft=javascript
+
+" fzf
+nnoremap <C-F> :Files<CR>
+nnoremap <C-T> :Tags<CR>
+nnoremap <C-B> :Buffers<CR>
