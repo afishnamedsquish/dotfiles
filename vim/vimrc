@@ -22,7 +22,7 @@ set clipboard=unnamed
 set showcmd
 set splitright
 set modeline
-set suffixesadd=.js,.php
+set suffixesadd=.js,.php,.css,.scss
 
 " smoother plugins
 set lazyredraw
@@ -179,8 +179,6 @@ nnoremap <leader>ur :<C-u>Unite -no-split -buffer-name=mru     -start-insert fil
 nnoremap <C-Y> :<C-u>Unite -no-split history/yank<cr>
 nnoremap <C-G> :<C-u>Unite -no-split -start-insert grep:.<CR>
 nnoremap <C-Q>b :<C-u>Unite -quick-match buffer<cr>
-nnoremap <C-K> :<C-u>Unite -no-split -buffer-name=bookmark  -start-insert bookmark<cr>
-nnoremap <C-K>a :<C-u>UniteBookmarkAdd<cr>
 
 " Search motion to end of search
 vnoremap <silent> S //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
@@ -201,6 +199,7 @@ endfunction
 au FileType ruby setlocal kp=ri sw=2 ts=2 expandtab
 au FileType lisp setlocal sw=2 ts=2 sts=2 sta
 au FileType javascript setlocal kp=ri sw=2 ts=2 expandtab
+au FileType scss,css setlocal kp=ri sw=2 ts=2 expandtab
 au FileType php setlocal keywordprg=phpd
 au BufRead,BufNewFile *.aspx,*.asmx,*.ascx set noexpandtab
 au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -210,3 +209,6 @@ au BufNewFile,BufRead *.json set ft=javascript
 nnoremap <C-F> :Files<CR>
 nnoremap <C-T> :Tags<CR>
 nnoremap <C-B> :Buffers<CR>
+
+" help
+nnoremap K :help <C-r><C-w><CR>
