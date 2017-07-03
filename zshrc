@@ -17,7 +17,8 @@ alias tmux="TERM=screen-256color-bce tmux"
 alias r="rsync -rltD --progress --exclude='*.swp' --exclude='*.bak'"
 alias o="xdg-open"
 alias g="git"
-alias vi="vim"
+alias vi="nvim"
+alias vim="nvim"
 alias phps="psysh"
 alias copy="xclip -selection clipboard"
 alias CAPSOFF="python -c 'from ctypes import *; X11 = cdll.LoadLibrary(\"libX11.so.6\"); display = X11.XOpenDisplay(None); X11.XkbLockModifiers(display, c_uint(0x0100), c_uint(2), c_uint(0)); X11.XCloseDisplay(display)'"
@@ -64,6 +65,8 @@ function ttm {
     task $1 modify $2
 }
 
+alias tm="tmux"
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -93,7 +96,7 @@ DISABLE_CORRECTION="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git composer symfony2 web-search rand-quote battery ssh-agent)
+plugins=(git composer symfony2 web-search rand-quote battery ssh-agent tmux colored-man-pages colorize copyfile)
 
 source $ZSH/oh-my-zsh.sh
 
